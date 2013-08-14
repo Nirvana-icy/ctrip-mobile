@@ -47,7 +47,8 @@
     region.center = self.coordinate;
     
     [mapView setRegion:region];
-    [mapView setCameraDegree:45.0];
+    [mapView setCameraDegree:22.0 animated:YES duration:1.0];
+    [mapView setRotationDegree:45 animated:YES duration:1.0];
     
     [self.view addSubview:mapView];
     
