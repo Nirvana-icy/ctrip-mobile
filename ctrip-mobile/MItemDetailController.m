@@ -10,7 +10,8 @@
 #import "MDetailCell.h"
 #import "NSString+Category.h"
 #import "MOrderCreateController.h"
-#import "MMapController.h"
+//#import "MMapController.h"
+#import "AMapController.h"
 #import "TOrder.h"
 #import "UIImageView+AFNetworking.h"
 #import "Const.h"
@@ -293,7 +294,8 @@
     
     if (section == 2 && row == 1) {
         //address view
-        MMapController *controller = [[[MMapController alloc] init] autorelease];
+        //MMapController *controller = [[[MMapController alloc] init] autorelease];
+        AMapController *controller = [[[AMapController alloc] init] autorelease];
         
         controller.name = [NSString stringWithString:self.detail.name];
         controller.address = [NSString stringWithString:self.detail.address];
