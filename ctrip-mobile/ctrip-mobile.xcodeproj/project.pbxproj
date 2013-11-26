@@ -81,6 +81,9 @@
 		2B9ABB4517BB6058000835A1 /* libMAMapKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B9ABB4117BB6058000835A1 /* libMAMapKit.a */; };
 		2B9ABB4617BB6058000835A1 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B9ABB4317BB6058000835A1 /* AMap.bundle */; };
 		2B9ABB4917BB60CC000835A1 /* AMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9ABB4817BB60CC000835A1 /* AMapController.m */; };
+		2BABA9431844D57C00F763DD /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BABA9411844D57C00F763DD /* reveal-icon.png */; };
+		2BABA9441844D57C00F763DD /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BABA9421844D57C00F763DD /* reveal-icon@2x.png */; };
+		2BABA9481844DACC00F763DD /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BABA9471844DACC00F763DD /* SWRevealViewController.m */; };
 		2BCB41851733AFDF00B4C12E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB41841733AFDF00B4C12E /* Reachability.m */; };
 		2BE790411739ED8B001011FB /* airplane@2x.png.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BE790401739ED8B001011FB /* airplane@2x.png.png */; };
 		2BE79045173A0DA7001011FB /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BE79044173A0DA7001011FB /* white.png */; };
@@ -97,7 +100,6 @@
 		8023A74617393D6400C9ED75 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8023A74417393D6400C9ED75 /* placeholder@2x.png */; };
 		8023A74917393E8200C9ED75 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 8023A74717393E8200C9ED75 /* thumbnail.png */; };
 		8023A74A17393E8200C9ED75 /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8023A74817393E8200C9ED75 /* thumbnail@2x.png */; };
-		8023A74D1739465F00C9ED75 /* HOME.png in Resources */ = {isa = PBXBuildFile; fileRef = 8023A74B1739465F00C9ED75 /* HOME.png */; };
 		8023A74E1739465F00C9ED75 /* hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 8023A74C1739465F00C9ED75 /* hotel.png */; };
 		802E60871733DE7500E7BBE3 /* MDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 802E60851733DE7500E7BBE3 /* MDB.xcdatamodeld */; };
 		802E608A1733E0B600E7BBE3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802E60891733E0B600E7BBE3 /* CoreData.framework */; };
@@ -261,6 +263,10 @@
 		2B9ABB4317BB6058000835A1 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		2B9ABB4717BB60CC000835A1 /* AMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMapController.h; sourceTree = "<group>"; };
 		2B9ABB4817BB60CC000835A1 /* AMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMapController.m; sourceTree = "<group>"; };
+		2BABA9411844D57C00F763DD /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reveal-icon.png"; path = "../reveal-icon.png"; sourceTree = "<group>"; };
+		2BABA9421844D57C00F763DD /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reveal-icon@2x.png"; path = "../reveal-icon@2x.png"; sourceTree = "<group>"; };
+		2BABA9461844DACC00F763DD /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		2BABA9471844DACC00F763DD /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		2BCB41831733AFDF00B4C12E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		2BCB41841733AFDF00B4C12E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		2BE790401739ED8B001011FB /* airplane@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane@2x.png.png"; sourceTree = "<group>"; };
@@ -284,7 +290,6 @@
 		8023A74417393D6400C9ED75 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
 		8023A74717393E8200C9ED75 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
 		8023A74817393E8200C9ED75 /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
-		8023A74B1739465F00C9ED75 /* HOME.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HOME.png; sourceTree = "<group>"; };
 		8023A74C1739465F00C9ED75 /* hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotel.png; sourceTree = "<group>"; };
 		802E60861733DE7500E7BBE3 /* MDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MDB.xcdatamodel; sourceTree = "<group>"; };
 		802E60891733E0B600E7BBE3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -340,6 +345,7 @@
 		2B17DD7A17163AC500C7AB97 = {
 			isa = PBXGroup;
 			children = (
+				2BABA9451844DACC00F763DD /* SWRevealViewController */,
 				2B9ABB2717BB5EAD000835A1 /* OpenGLES.framework */,
 				2B9ABB2617BB5E45000835A1 /* AMapKit */,
 				2B9ABB0617BB5CF9000835A1 /* CoreTelephony.framework */,
@@ -483,13 +489,14 @@
 		2B774CB217210EA000FFD9DF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2BABA9411844D57C00F763DD /* reveal-icon.png */,
+				2BABA9421844D57C00F763DD /* reveal-icon@2x.png */,
 				80F21F6A173BDCC100D9A580 /* hotel1.png */,
 				80F21F6B173BDCC100D9A580 /* House-256.png */,
 				80F21F6C173BDCC100D9A580 /* OldHouse.png */,
 				2BE79048173A1049001011FB /* transparent.png.png */,
 				2BE79044173A0DA7001011FB /* white.png */,
 				2BE790401739ED8B001011FB /* airplane@2x.png.png */,
-				8023A74B1739465F00C9ED75 /* HOME.png */,
 				8023A74C1739465F00C9ED75 /* hotel.png */,
 				8023A74717393E8200C9ED75 /* thumbnail.png */,
 				8023A74817393E8200C9ED75 /* thumbnail@2x.png */,
@@ -671,6 +678,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		2BABA9451844DACC00F763DD /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BABA9461844DACC00F763DD /* SWRevealViewController.h */,
+				2BABA9471844DACC00F763DD /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		801343D8172FA8A4007FEBB1 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,6 +731,11 @@
 				CLASSPREFIX = Rococo;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = caoguangyao;
+				TargetAttributes = {
+					2B17DD8217163AC500C7AB97 = {
+						DevelopmentTeam = 354ZK78B64;
+					};
+				};
 			};
 			buildConfigurationList = 2B17DD7E17163AC500C7AB97 /* Build configuration list for PBXProject "ctrip-mobile" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -752,6 +773,7 @@
 				2B82CBA4171E598400A5A4EC /* cell_bottom@2x.png in Resources */,
 				2B82CBA5171E598400A5A4EC /* cell_middle.png in Resources */,
 				2B82CBA6171E598400A5A4EC /* cell_middle@2x.png in Resources */,
+				2BABA9431844D57C00F763DD /* reveal-icon.png in Resources */,
 				2B82CBA7171E598400A5A4EC /* cell_top_tile.png in Resources */,
 				2B82CBA8171E598400A5A4EC /* cell_top.png in Resources */,
 				2B82CBA9171E598400A5A4EC /* cell_top@2x.png in Resources */,
@@ -763,6 +785,7 @@
 				2B774CB017210E6A00FFD9DF /* page.png in Resources */,
 				2B87254A1724F62B00FC5FC7 /* MDetailCell.xib in Resources */,
 				80D379A7172EDE55008075AF /* NotifyCheck.png in Resources */,
+				2BABA9441844D57C00F763DD /* reveal-icon@2x.png in Resources */,
 				80D379A8172EDE55008075AF /* NotifyCheck@2x.png in Resources */,
 				80D379A9172EDE55008075AF /* NotifyX.png in Resources */,
 				80D379AA172EDE55008075AF /* NotifyX@2x.png in Resources */,
@@ -772,7 +795,6 @@
 				8023A74617393D6400C9ED75 /* placeholder@2x.png in Resources */,
 				8023A74917393E8200C9ED75 /* thumbnail.png in Resources */,
 				8023A74A17393E8200C9ED75 /* thumbnail@2x.png in Resources */,
-				8023A74D1739465F00C9ED75 /* HOME.png in Resources */,
 				8023A74E1739465F00C9ED75 /* hotel.png in Resources */,
 				2BE790411739ED8B001011FB /* airplane@2x.png.png in Resources */,
 				2BE79045173A0DA7001011FB /* white.png in Resources */,
@@ -814,6 +836,7 @@
 				2B82CBB8171E84F300A5A4EC /* MCell.m in Sources */,
 				2B82CBBD171E8A6B00A5A4EC /* MTextFieldCell.m in Sources */,
 				2B82CBC2171E9B0400A5A4EC /* UserDefaults.m in Sources */,
+				2BABA9481844DACC00F763DD /* SWRevealViewController.m in Sources */,
 				2B289F98171F819100A3CE7B /* Const.m in Sources */,
 				2B289F9C171FAF2700A3CE7B /* MSelectController.m in Sources */,
 				2B774CA21720E5D400FFD9DF /* MWindow.m in Sources */,
@@ -923,8 +946,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: guang cao (354ZK78B64)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: guang cao (354ZK78B64)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ctrip-mobile/ctrip-mobile-Prefix.pch";
 				INFOPLIST_FILE = "ctrip-mobile/ctrip-mobile-Info.plist";
@@ -948,8 +971,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: guang cao (354ZK78B64)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: guang cao (354ZK78B64)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ctrip-mobile/ctrip-mobile-Prefix.pch";
 				INFOPLIST_FILE = "ctrip-mobile/ctrip-mobile-Info.plist";
