@@ -31,13 +31,14 @@
     self.title = self.name;
     
     //MKMapView *mapView = [[[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)] autorelease];
-    CGFloat height = [[UIScreen mainScreen] bounds].size.height-64;
+    /*CGFloat height = [[UIScreen mainScreen] bounds].size.height;//-64;
     CGFloat width = [[UIScreen mainScreen] bounds].size.width;
     
-    NSLog(@"width == %f",width);
+    NSLog(@"height == %f",height);
     
-    CGRect frame = CGRectMake(0, 0, width, height);
-    MAMapView *mapView = [[[MAMapView alloc] initWithFrame:frame] autorelease];
+    CGRect frame = CGRectMake(0, 0, width, height);*/
+    
+    MAMapView *mapView = [[[MAMapView alloc] initWithFrame:self.view.frame] autorelease];
     mapView.delegate = self;
     
     MACoordinateRegion region;
