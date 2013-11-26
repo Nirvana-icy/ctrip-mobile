@@ -167,8 +167,8 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentiy] autorelease];
         
-        int section = [indexPath section];
-        int row = [indexPath row];
+        NSInteger section = [indexPath section];
+        NSInteger row = [indexPath row];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (section == 0 ) {
             if (row == 0) {
