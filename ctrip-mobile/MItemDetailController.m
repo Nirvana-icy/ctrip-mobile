@@ -289,8 +289,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int row = [indexPath row];
-    int section = [indexPath section];
+    NSInteger row = [indexPath row];
+    NSInteger section = [indexPath section];
     
     if (section == 2 && row == 1) {
         //address view
