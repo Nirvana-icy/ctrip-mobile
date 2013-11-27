@@ -188,7 +188,7 @@ typedef enum
 // Moreover you can assign a delegate to let the class inform you on positions and animation activity.
 
 // Delegate
-@property (weak, nonatomic) id<SWRevealViewControllerDelegate> delegate;
+@property (assign, nonatomic) id<SWRevealViewControllerDelegate> delegate;
 
 @end
 
