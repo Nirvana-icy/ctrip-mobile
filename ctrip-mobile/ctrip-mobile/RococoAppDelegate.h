@@ -15,6 +15,7 @@
 #import "MNavigationController.h"
 
 @class MItemListController;
+@class SWRevealViewController;
 
 @interface RococoAppDelegate : UIResponder <UIApplicationDelegate,CLLocationManagerDelegate,jsonDelegate>
 {
@@ -27,6 +28,7 @@
 @property (strong, nonatomic) MWindow *window;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) MItemListController *viewController;
+@property (strong, nonatomic) SWRevealViewController *swRevealViewController;
 @property (strong, nonatomic) MNetWork *network;
 @property (nonatomic,retain) MNavigationController *nav;
 

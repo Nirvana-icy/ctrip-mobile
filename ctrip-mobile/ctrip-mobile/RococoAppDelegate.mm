@@ -23,11 +23,36 @@
 #import "UIAlertView+Blocks.h"
 #import "MOrderDetailController.h"
 #import "SDURLCache.h"
+#import "APIKey.h"
+#import <MAMapKit/MAMapKit.h>
+/*
+#import "SWRevealViewController.h"
+#import "FrontViewController.h"
+#import "RearViewController.h"
+ */
+
 #define requireURL  [NSString stringWithFormat:@"%@%@/?page_index=%d%@",API_BASE_URL,GROUP_LIST_PARAMTER,1,PAGE_SIZE_PARAMTER]
 
 #define kAlreadyBeenLaunched @"AlreadyBeenLaunched"
 
+
 @implementation RococoAppDelegate
+
+- (void)configureAPIKey
+{
+    if ([APIKey length] == 0)
+    {
+        NSString *name   = [NSString stringWithFormat:@"\nSDKVersion:%@\nFILE:%s\nLINE:%d\nMETHOD:%s", [MAMapServices sharedServices].SDKVersion, __FILE__, __LINE__, __func__];
+        NSString *reason = [NSString stringWithFormat:@"请首先配置APIKey.h中的APIKey, 申请APIKey参考见 http://api.amap.com"];
+        
+        @throw [NSException exceptionWithName:name
+                                       reason:reason
+                                     userInfo:nil];
+    }
+    
+    [MAMapServices sharedServices].apiKey = (NSString *)APIKey;
+}
+
 
 - (void)saveContext
 {
@@ -214,6 +239,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self configureAPIKey];
     
     SDURLCache *URLCache = [[SDURLCache alloc] initWithMemoryCapacity:8 * 1024 * 1024 diskCapacity:40 * 1024 * 1024 diskPath:nil];
     
@@ -232,6 +258,22 @@
     self.nav = [[[MNavigationController alloc] initWithRootViewController:self.viewController]autorelease];
     
     self.window.rootViewController = self.nav;
+    
+    //FrontViewController *frontController = (FrontViewController *)self.viewController;
+    float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (systemVersion>=7) {
+        /*
+        RearViewController *rearController = [[[RearViewController  alloc] init] autorelease];
+        
+        MNavigationController *frontNav = self.nav;
+        MNavigationController *rearNav = [[[MNavigationController alloc] initWithRootViewController:rearController] autorelease];
+        
+        SWRevealViewController *revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNav frontViewController:frontNav] ;
+        revealController.delegate = self;
+        
+        self.window.rootViewController = revealController;*/
+        
+    }
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"AlreadyBeenLaunched"]) {
         // This is our very first launch
