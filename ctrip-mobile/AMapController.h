@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MAMapKit.h"
+#import "MAMapKit/MAMapKit.h"
 
 @interface AMapController : UIViewController<MAMapViewDelegate>
 
