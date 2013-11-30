@@ -17,7 +17,6 @@
 #import "NSString+Category.h"
 #import "Const.h"
 #import "MBProgressHUD.h"
-#import "SBJSON.h"
 @interface MMyOrderController ()
 
 @property (nonatomic,strong) NSArray *orderEntitys;

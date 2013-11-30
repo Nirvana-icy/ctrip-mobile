@@ -147,19 +147,6 @@
 		2B17DDBD17179F1B00C7AB97 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2B17DDBF1717A26B00C7AB97 /* MItemListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MItemListController.h; path = "ctrip-mobile/MItemListController.h"; sourceTree = "<group>"; };
 		2B17DDC01717A26B00C7AB97 /* MItemListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MItemListController.m; path = "ctrip-mobile/MItemListController.m"; sourceTree = "<group>"; };
-		2B188FB1171D1931000CC570 /* JSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		2B188FB2171D1931000CC570 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		2B188FB3171D1931000CC570 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		2B188FB4171D1931000CC570 /* NSString+SBJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		2B188FB5171D1931000CC570 /* NSString+SBJSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
-		2B188FB6171D1931000CC570 /* SBJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		2B188FB7171D1931000CC570 /* SBJSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
-		2B188FB8171D1931000CC570 /* SBJsonBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		2B188FB9171D1931000CC570 /* SBJsonBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
-		2B188FBA171D1931000CC570 /* SBJsonParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		2B188FBB171D1931000CC570 /* SBJsonParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		2B188FBC171D1931000CC570 /* SBJsonWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		2B188FBD171D1931000CC570 /* SBJsonWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		2B188FDC171D1C53000CC570 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		2B188FDE171D1C63000CC570 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2B188FE0171D1C6E000CC570 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -356,7 +343,6 @@
 				2B82CB95171E2E4700A5A4EC /* Views */,
 				2B188FE8171D24F2000CC570 /* AFNetworking */,
 				2B188FDB171D1A41000CC570 /* MBProgressHUD */,
-				2B188FBE171D1939000CC570 /* SBJSON */,
 				2B17DD8C17163AC600C7AB97 /* ctrip-mobile */,
 				2B17DD8517163AC500C7AB97 /* Frameworks */,
 				2B17DD8417163AC500C7AB97 /* Products */,
@@ -414,26 +400,6 @@
 				2B17DD9417163AC600C7AB97 /* ctrip-mobile-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2B188FBE171D1939000CC570 /* SBJSON */ = {
-			isa = PBXGroup;
-			children = (
-				2B188FB1171D1931000CC570 /* JSON.h */,
-				2B188FB2171D1931000CC570 /* NSObject+SBJSON.h */,
-				2B188FB3171D1931000CC570 /* NSObject+SBJSON.m */,
-				2B188FB4171D1931000CC570 /* NSString+SBJSON.h */,
-				2B188FB5171D1931000CC570 /* NSString+SBJSON.m */,
-				2B188FB6171D1931000CC570 /* SBJSON.h */,
-				2B188FB7171D1931000CC570 /* SBJSON.m */,
-				2B188FB8171D1931000CC570 /* SBJsonBase.h */,
-				2B188FB9171D1931000CC570 /* SBJsonBase.m */,
-				2B188FBA171D1931000CC570 /* SBJsonParser.h */,
-				2B188FBB171D1931000CC570 /* SBJsonParser.m */,
-				2B188FBC171D1931000CC570 /* SBJsonWriter.h */,
-				2B188FBD171D1931000CC570 /* SBJsonWriter.m */,
-			);
-			name = SBJSON;
 			sourceTree = "<group>";
 		};
 		2B188FDB171D1A41000CC570 /* MBProgressHUD */ = {
