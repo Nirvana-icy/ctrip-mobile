@@ -11,5 +11,5 @@
 #import "MBaseController.h"
 @interface MOrderCreateController : MBaseController
 
-@property (nonatomic,retain) TOrder *order;
+@property (nonatomic,strong) TOrder *order;
 @end

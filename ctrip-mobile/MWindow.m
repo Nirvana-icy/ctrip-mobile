@@ -57,7 +57,6 @@
 
 - (void)dealloc {
     [self stopObservingFirstResponder];
-    [super dealloc];
 }
 
 - (void)sendEvent:(UIEvent *)event {

@@ -16,13 +16,6 @@
 @synthesize datasource = _datasource;
 @synthesize delegate = _delegate;
 
-- (void)dealloc
-{
-    [_scrollView release];
-    [_pageControl release];
-    [_curViews release];
-    [super dealloc];
-}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -85,7 +78,6 @@
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                     action:@selector(handleTap:)];
         [v addGestureRecognizer:singleTap];
-        [singleTap release];
         v.frame = CGRectOffset(v.frame, v.frame.size.width * i, 0);
         [_scrollView addSubview:v];
     }
@@ -136,7 +128,6 @@
             UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                         action:@selector(handleTap:)];
             [v addGestureRecognizer:singleTap];
-            [singleTap release];
             v.frame = CGRectOffset(v.frame, v.frame.size.width * i, 0);
             [_scrollView addSubview:v];
         }

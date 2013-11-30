@@ -43,14 +43,14 @@
 }
 
 -(void)showConfig{
-    MConfigController *controller = [[[MConfigController alloc] initWithStyle:UITableViewStyleGrouped]autorelease];
+    MConfigController *controller = [[MConfigController alloc] initWithStyle:UITableViewStyleGrouped];
     
     [self.navigationController pushViewController:controller animated:YES];
 }
 
 -(void)showOrders
 {
-    MMyOrderController *controller = [[[MMyOrderController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+    MMyOrderController *controller = [[MMyOrderController alloc] initWithStyle:UITableViewStylePlain];
     controller.title = @"购买纪录";
     [self.navigationController pushViewController:controller animated:YES];
 
@@ -72,7 +72,7 @@
     
     RIButtonItem *cancelButton = [RIButtonItem itemWithLabel:@"取消"];
     
-    UIActionSheet *actionSheet  = [[[UIActionSheet alloc] initWithTitle:nil cancelButtonItem:cancelButton destructiveButtonItem:nil otherButtonItems:configItem,myorderItem, nil] autorelease ];
+    UIActionSheet *actionSheet  = [[UIActionSheet alloc] initWithTitle:nil cancelButtonItem:cancelButton destructiveButtonItem:nil otherButtonItems:configItem,myorderItem, nil];
     actionSheet.actionSheetStyle =UIActionSheetStyleBlackTranslucent;
     [actionSheet showInView:self.view];
 }
@@ -82,7 +82,7 @@
     [super viewDidLoad];
     
     
-    UIBarButtonItem *actionButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActionSheet)] autorelease];
+    UIBarButtonItem *actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActionSheet)];
     
     
     self.navigationItem.rightBarButtonItem = actionButton;
@@ -98,9 +98,8 @@
 
 -(void)dealloc
 {
-    [self.title release];
-    [self.items release];
-    [super dealloc];
+    self.title;
+    self.items;
 }
 
 
@@ -194,7 +193,7 @@
         cell.priceLabel.text = nil;
         cell.descLabel.text = nil;
         
-        UILabel *moreLabel = [[[UILabel alloc] init] autorelease];
+        UILabel *moreLabel = [[UILabel alloc] init];
         
         moreLabel.text = @"载入更多...";
         moreLabel.backgroundColor = [UIColor clearColor];
@@ -293,9 +292,9 @@
     }
     else if([path isEqualToString:GROUP_PRODUCT_PARAMTER])
     {
-        MItemDetailController *controller = [[[MItemDetailController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+        MItemDetailController *controller = [[MItemDetailController alloc] initWithStyle:UITableViewStylePlain];
         
-        ItemDetail *detail = [[[ItemDetail alloc] initWithDictionary:(NSDictionary *)json] autorelease];
+        ItemDetail *detail = [[ItemDetail alloc] initWithDictionary:(NSDictionary *)json];
         
         controller.detail = detail;
         

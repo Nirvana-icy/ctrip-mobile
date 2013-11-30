@@ -30,12 +30,12 @@
 @property (strong, nonatomic) MItemListController *viewController;
 @property (strong, nonatomic) SWRevealViewController *swRevealViewController;
 @property (strong, nonatomic) MNetWork *network;
-@property (nonatomic,retain) MNavigationController *nav;
+@property (nonatomic,strong) MNavigationController *nav;
 
 
-@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, strong, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (NSString *)applicationDocumentsDirectory;
 - (void)saveContext;

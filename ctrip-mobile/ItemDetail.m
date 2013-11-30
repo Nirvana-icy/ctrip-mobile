@@ -52,7 +52,7 @@
         
         self.location = loaction;
         
-        NSArray *images = [[[NSArray alloc] init] autorelease];
+        NSArray *images = [[NSArray alloc] init];
         
         NSArray *list = [dictionary objectForKey:@"pictures"];
         

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0277590F-34D4-4A1A-A911-F894839459C8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ctrip-mobile</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>634A1367-B05A-4AE2-BE81-C8D51919B0F0</key>
+		<string>https://github.com/caoguangyao/ctrip-mobile.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ctrip-mobile/ctrip-mobile.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>634A1367-B05A-4AE2-BE81-C8D51919B0F0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/caoguangyao/ctrip-mobile.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>634A1367-B05A-4AE2-BE81-C8D51919B0F0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>634A1367-B05A-4AE2-BE81-C8D51919B0F0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ctrip-mobile</string>
+		</dict>
+	</array>
+</dict>
+</plist>

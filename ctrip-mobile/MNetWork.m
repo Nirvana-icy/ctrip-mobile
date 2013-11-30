@@ -19,7 +19,6 @@
 -(void) hudWasHidden:(MBProgressHUD *)hud
 {
     [hud removeFromSuperview];
-	[hud release];
 	hud = nil;
 }
 
@@ -85,7 +84,6 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"发生异常，请检查网络连接，让后重试。" cancelButtonItem:cancelButton otherButtonItems:retryButton, nil];
         [alert show];
         
-        [alert release];
         
         
     }];
@@ -100,11 +98,5 @@
 }
 
 
--(void)dealloc
-{
-    [_delegate release];
- 
-    [super dealloc];
-}
 
 @end

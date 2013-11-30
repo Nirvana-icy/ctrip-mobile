@@ -10,6 +10,6 @@
 #import "MNetWork.h"
 @interface MBaseController : UITableViewController<jsonDelegate>
 
-@property (retain,nonatomic)MNetWork *network;
+@property (strong,nonatomic)MNetWork *network;
 
 @end

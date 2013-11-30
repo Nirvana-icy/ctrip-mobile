@@ -23,6 +23,10 @@
     return self;
 }
 
+-(void)mapOptions{
+    NSLog(@"map options menu clicked.");
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -30,15 +34,11 @@
     
     self.title = self.name;
     
-    //MKMapView *mapView = [[[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)] autorelease];
-    /*CGFloat height = [[UIScreen mainScreen] bounds].size.height;//-64;
-    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"] style:UIBarButtonItemStylePlain target:self action:@selector(mapOptions)];
+    self.navigationItem.rightBarButtonItem = item;
     
-    NSLog(@"height == %f",height);
     
-    CGRect frame = CGRectMake(0, 0, width, height);*/
-    
-    MAMapView *mapView = [[[MAMapView alloc] initWithFrame:self.view.frame] autorelease];
+    MAMapView *mapView = [[MAMapView alloc] initWithFrame:self.view.frame];
     mapView.delegate = self;
     
     MACoordinateRegion region;
@@ -48,12 +48,12 @@
     region.center = self.coordinate;
     
     [mapView setRegion:region];
-    [mapView setCameraDegree:22.0 animated:YES duration:1.0];
-    [mapView setRotationDegree:45 animated:YES duration:1.0];
+    //[mapView setCameraDegree:22.0 animated:YES duration:1.0];
+    //[mapView setRotationDegree:45 animated:YES duration:1.0];
     
     [self.view addSubview:mapView];
     
-    MAPointAnnotation *annotation = [[[MAPointAnnotation alloc] init] autorelease];
+    MAPointAnnotation *annotation = [[MAPointAnnotation alloc] init];
 	annotation.coordinate = self.coordinate;
     annotation.title = self.address;
     annotation.subtitle =self.name;
@@ -70,7 +70,7 @@
     pinView = (MAPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:pinIdentify];
     
     if (pinView == nil) {
-        pinView = [[[MAPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pinIdentify]autorelease];
+        pinView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pinIdentify];
         
         pinView.pinColor = MAPinAnnotationColorRed;
         pinView.canShowCallout = YES;

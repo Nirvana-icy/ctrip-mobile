@@ -58,7 +58,7 @@
     NSString *timeRange = userDefaults.timeRange;
     
     NSDate *now = [NSDate date];
-    NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
     userDefaults.beginDate = [formatter stringFromDate:now];
     NSTimeInterval timeInterval;
@@ -149,9 +149,9 @@
         NSDictionary *dataItem = (NSDictionary *)[dataList lastObject];
         
         if ([[dataItem allKeys] count]==2) {
-            MSelectController *controller = [[[MSelectController alloc] initWithStyle:UITableViewStyleGrouped]autorelease];
+            MSelectController *controller = [[MSelectController alloc] initWithStyle:UITableViewStyleGrouped];
             
-            NSArray *province_list = [[[NSArray alloc] init]autorelease];
+            NSArray *province_list = [[NSArray alloc] init];
             
             for (NSDictionary *dic in (NSArray *)json) {
                 NSString *province = [dic valueForKey:@"name"];
@@ -201,18 +201,13 @@
     [self.tableView reloadData];
 }
 
--(void)dealloc
-{
-    [userDefaults release];
-    [super dealloc];
-}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.title = @"选项";
     
-    UIBarButtonItem *btnDone = [[[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleBordered target:self action:@selector(doSearch)] autorelease];
+    UIBarButtonItem *btnDone = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleBordered target:self action:@selector(doSearch)];
     
     self.navigationItem.rightBarButtonItem = btnDone;
     
@@ -370,7 +365,7 @@
     NSInteger row = [indexPath row];
     
     if (section == 1) {
-        MSelectController *controller = [[[MSelectController alloc] initWithStyle:UITableViewStyleGrouped]autorelease];
+        MSelectController *controller = [[MSelectController alloc] initWithStyle:UITableViewStyleGrouped];
         if (row ==0) {
             //cities
             NSString *strURL = [NSString stringWithFormat:@"%@%@/",API_BASE_URL,PROVINCE_LIST_PARAMTER];

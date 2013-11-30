@@ -10,17 +10,17 @@
 
 @interface TOrder : NSObject
 //required data
-@property (nonatomic,retain) NSString *productID;
-@property (nonatomic,retain) NSString *productName;
-@property (nonatomic,retain) NSString *email;
-@property (nonatomic,retain) NSString *mobile;
-@property (nonatomic,retain) NSString *quantity;
+@property (nonatomic,strong) NSString *productID;
+@property (nonatomic,strong) NSString *productName;
+@property (nonatomic,strong) NSString *email;
+@property (nonatomic,strong) NSString *mobile;
+@property (nonatomic,strong) NSString *quantity;
 
-@property (nonatomic,retain) NSString *price;
+@property (nonatomic,strong) NSString *price;
 //return data
-@property (nonatomic,retain) NSString *amount;
-@property (nonatomic,retain) NSString *status;
-@property (nonatomic,retain) NSString *orderID;
-@property (nonatomic,retain) NSString *createTime;
+@property (nonatomic,strong) NSString *amount;
+@property (nonatomic,strong) NSString *status;
+@property (nonatomic,strong) NSString *orderID;
+@property (nonatomic,strong) NSString *createTime;
 
 @end

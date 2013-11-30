@@ -13,6 +13,6 @@
 
 
 @property (nonatomic,assign)NSInteger tag;
-@property (nonatomic,retain)NSArray *dataList;
+@property (nonatomic,strong)NSArray *dataList;
 
 @end

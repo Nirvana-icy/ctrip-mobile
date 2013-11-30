@@ -63,7 +63,7 @@ static Const *sharedObject = nil;
 -(NSArray *)getProudctItemListFromRequest:(NSURLRequest *)request withJSON:(id)json
 {
     NSString *path = [[request URL] path];
-    NSArray *itemList = [[[NSArray alloc] init]autorelease];
+    NSArray *itemList = [[NSArray alloc] init];
     
     if ([path isEqualToString:GROUP_LIST_PARAMTER]) {
         NSArray *list = (NSArray *)[json objectForKey:@"items"];
@@ -71,7 +71,7 @@ static Const *sharedObject = nil;
         for (id data in list) {
             if ([data isKindOfClass:[NSDictionary class]]) {
                 
-                Item *item = [[[Item alloc] initWithDictionary:data] autorelease];
+                Item *item = [[Item alloc] initWithDictionary:data];
                 
                 itemList = [itemList arrayByAddingObject:item];
                 

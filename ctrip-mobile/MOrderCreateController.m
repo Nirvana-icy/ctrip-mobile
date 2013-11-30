@@ -117,7 +117,6 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"即将打开Safari\n前往支付页面，是否继续？" message:nil cancelButtonItem:cancelItem otherButtonItems:okItem, nil];
         
         [alert show];
-        [alert release];
         
         
         
@@ -131,7 +130,7 @@
     
     self.title = @"订单";
     
-    UIBarButtonItem *btnDone = [[[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStyleBordered target:self action:@selector(createOrder)] autorelease];
+    UIBarButtonItem *btnDone = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStyleBordered target:self action:@selector(createOrder)];
     
     self.navigationItem.rightBarButtonItem = btnDone;
 	// Do any additional setup after loading the view.
@@ -165,7 +164,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentiy];
     
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentiy] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentiy];
         
         NSInteger section = [indexPath section];
         NSInteger row = [indexPath row];
@@ -180,7 +179,7 @@
         }
         else{
             
-            UITextField *textField = [[[UITextField alloc] initWithFrame:CGRectMake(30, 10, 300, 30)]autorelease];
+            UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(30, 10, 300, 30)];
             
             
             if (row == 0) {

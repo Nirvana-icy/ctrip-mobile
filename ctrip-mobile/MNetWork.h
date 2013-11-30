@@ -19,7 +19,7 @@
 @interface MNetWork : NSObject<MBProgressHUDDelegate>
 
 
-@property (assign,nonatomic) id<jsonDelegate> delegate;
+@property (weak,nonatomic) id<jsonDelegate> delegate;
 
 -(void)httpJsonResponse:(NSString *)str byController:(UIViewController *)controller;
 

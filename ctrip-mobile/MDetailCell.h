@@ -10,7 +10,7 @@
 
 @interface MDetailCell : UITableViewCell
 
-@property (nonatomic,retain) IBOutlet UILabel *titleLabel;
-@property (nonatomic,retain) IBOutlet UILabel *detailLabel;
+@property (nonatomic,strong) IBOutlet UILabel *titleLabel;
+@property (nonatomic,strong) IBOutlet UILabel *detailLabel;
 
 @end

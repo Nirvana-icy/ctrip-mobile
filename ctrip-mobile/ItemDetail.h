@@ -12,21 +12,21 @@
 @interface ItemDetail : NSObject
 
 @property (assign,nonatomic) NSUInteger productID;
-@property (retain,nonatomic) NSString *name;
-@property (retain,nonatomic) NSString *desc;
-@property (retain,nonatomic) NSString *ruleDesc;
-@property (retain,nonatomic) NSString *headDesc;
-@property (retain,nonatomic) NSString *price;
-@property (retain,nonatomic) NSString *address;
-@property (retain,nonatomic) NSString *tel;
+@property (strong,nonatomic) NSString *name;
+@property (strong,nonatomic) NSString *desc;
+@property (strong,nonatomic) NSString *ruleDesc;
+@property (strong,nonatomic) NSString *headDesc;
+@property (strong,nonatomic) NSString *price;
+@property (strong,nonatomic) NSString *address;
+@property (strong,nonatomic) NSString *tel;
 @property (assign,nonatomic) CLLocationCoordinate2D location;
-@property (retain,nonatomic) NSArray *imageList;
-@property (retain,nonatomic) NSArray *imageDictList;
-@property (retain,nonatomic) NSString *oURL;
+@property (strong,nonatomic) NSArray *imageList;
+@property (strong,nonatomic) NSArray *imageDictList;
+@property (strong,nonatomic) NSString *oURL;
 
-@property (retain,nonatomic) NSArray *descList;
-@property (retain,nonatomic) NSArray *ruleDescList;
-@property (retain,nonatomic) NSArray *headDescList;
+@property (strong,nonatomic) NSArray *descList;
+@property (strong,nonatomic) NSArray *ruleDescList;
+@property (strong,nonatomic) NSArray *headDescList;
 
 -(id) initWithDictionary:(NSDictionary *)dictionary;
 @end

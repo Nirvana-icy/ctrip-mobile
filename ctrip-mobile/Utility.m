@@ -94,7 +94,6 @@ quantity:(NSString *)quantity product:(NSString *)productID
         NSLog(@"No matches");
     }
     
-    [request release];
     
     return objects;
 }
@@ -124,7 +123,7 @@ quantity:(NSString *)quantity product:(NSString *)productID
     NSURL *url = [request URL];
     NSString *query = [url query];
     
-    NSMutableDictionary *params = [[[NSMutableDictionary alloc] init]autorelease];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     
     for (NSString *param in [query componentsSeparatedByString:@"&"]) {
         
@@ -156,7 +155,7 @@ quantity:(NSString *)quantity product:(NSString *)productID
 
 -(void) setAlertView:(NSString *)title withMessage:(NSString *)message
 {
-    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil] autorelease];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
     
     [alert show];    
 }

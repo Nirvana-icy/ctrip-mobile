@@ -10,8 +10,8 @@
 
 @interface MItemCell : UITableViewCell
 
-@property(nonatomic,retain) IBOutlet UILabel *nameLabel;
-@property(nonatomic,retain) IBOutlet UILabel *priceLabel;
-@property(nonatomic,retain) IBOutlet UILabel *descLabel;
-@property(nonatomic,retain) IBOutlet UIImageView *thumbnailView;
+@property(nonatomic,strong) IBOutlet UILabel *nameLabel;
+@property(nonatomic,strong) IBOutlet UILabel *priceLabel;
+@property(nonatomic,strong) IBOutlet UILabel *descLabel;
+@property(nonatomic,strong) IBOutlet UIImageView *thumbnailView;
 @end

@@ -89,7 +89,6 @@
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"MDB" withExtension:@"momd"];
     managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    //managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];
     
     return managedObjectModel;
 }
@@ -150,7 +149,7 @@
 {
     [manager stopUpdatingLocation];
     
-    CLGeocoder *geoCoder = [[[CLGeocoder alloc] init]autorelease];
+    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
     
     [geoCoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         CLPlacemark *placemark = [placemarks objectAtIndex:0];
@@ -199,19 +198,6 @@
     
 }
 
-- (void)dealloc
-{
-    [managedObjectContext release];
-    [managedObjectModel release];
-    [persistentStoreCoordinator release];
-    
-    [_nav release];
-    [_network release];
-    [_window release];
-    [_viewController release];
-    [_locationManager release];
-    [super dealloc];
-}
 
 # pragma mark -- reachability method
 
@@ -246,16 +232,16 @@
     [NSURLCache setSharedURLCache:URLCache];
    
     
-    self.window = [[[MWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window = [[MWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.viewController = [[[MItemListController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+    self.viewController = [[MItemListController alloc] initWithStyle:UITableViewStylePlain];
     
     self.network = [[MNetWork alloc] init];
     self.network.delegate = self;
     
     [self setReachability];
     
-    self.nav = [[[MNavigationController alloc] initWithRootViewController:self.viewController]autorelease];
+    self.nav = [[MNavigationController alloc] initWithRootViewController:self.viewController];
     
     self.window.rootViewController = self.nav;
     
@@ -340,7 +326,7 @@
     UIImageView *splashView = [[UIImageView alloc] initWithFrame:screenRect];
     splashView.image = [UIImage imageNamed:@"Default.png"];
     
-    UIImageView *houseView = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 256, 256)] autorelease];
+    UIImageView *houseView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 256, 256)];
     houseView.image = [UIImage imageNamed:@"House-256.png"];
     houseView.center = CGPointMake(screenWidth/2, screenHeight*3/5);
     [splashView addSubview:houseView];
@@ -361,7 +347,6 @@
     
     [planeView setCenter:CGPointMake(screenWidth+155/2, 0)];
     [UIView commitAnimations];
-    [planeView release];
     
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:4.0];
@@ -370,7 +355,6 @@
     splashView.alpha = 0.0;
     [UIView commitAnimations];
     
-    [splashView release];
 }
 # pragma mark -ipc method
 -(BOOL) application:(UIApplication *)application handleOpenURL:(NSURL *)url
@@ -446,7 +430,6 @@
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"稍后将有短信和邮件提醒，请注意查收。\n如有任何疑问，请拨打1010-6666客服热线。" cancelButtonItem:cancelButton otherButtonItems:callButton, nil];
             [alert show];
-            [alert release];
             
             
         }

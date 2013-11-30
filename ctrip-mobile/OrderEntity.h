@@ -12,16 +12,16 @@
 
 @interface OrderEntity : NSManagedObject
 
-@property (nonatomic, retain) NSString * expirationDate;
-@property (nonatomic, retain) NSString * orderID;
-@property (nonatomic, retain) NSString * ticketPassword;
-@property (nonatomic, retain) NSString * productID;
-@property (nonatomic, retain) NSString * productName;
-@property (nonatomic, retain) NSString * orderStatus;
-@property (nonatomic, retain) NSString * ticketID;
-@property (nonatomic, retain) NSString * orderEmail;
-@property (nonatomic, retain) NSString * orderTel;
-@property (nonatomic, retain) NSString * orderQuantity;
-@property (nonatomic, retain) NSString * orderPrice;
+@property (nonatomic, strong) NSString * expirationDate;
+@property (nonatomic, strong) NSString * orderID;
+@property (nonatomic, strong) NSString * ticketPassword;
+@property (nonatomic, strong) NSString * productID;
+@property (nonatomic, strong) NSString * productName;
+@property (nonatomic, strong) NSString * orderStatus;
+@property (nonatomic, strong) NSString * ticketID;
+@property (nonatomic, strong) NSString * orderEmail;
+@property (nonatomic, strong) NSString * orderTel;
+@property (nonatomic, strong) NSString * orderQuantity;
+@property (nonatomic, strong) NSString * orderPrice;
 
 @end

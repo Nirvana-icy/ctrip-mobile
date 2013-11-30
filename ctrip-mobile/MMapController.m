@@ -29,14 +29,13 @@
     
     self.title = self.name;
     
-    //MKMapView *mapView = [[[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)] autorelease];
     CGFloat height = [[UIScreen mainScreen] bounds].size.height-64;
     CGFloat width = [[UIScreen mainScreen] bounds].size.width;
     
     NSLog(@"width == %f",width);
     
     CGRect frame = CGRectMake(0, 0, width, height);
-    MKMapView *mapView = [[[MKMapView alloc] initWithFrame:frame] autorelease];
+    MKMapView *mapView = [[MKMapView alloc] initWithFrame:frame];
     mapView.delegate = self;
     
     MKCoordinateRegion region;
@@ -49,7 +48,7 @@
     
     [self.view addSubview:mapView];
     
-    MKPointAnnotation *annotation = [[[MKPointAnnotation alloc] init] autorelease];
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
 	annotation.coordinate = self.coordinate;
     annotation.title = self.address;
     annotation.subtitle =self.name;
@@ -67,7 +66,7 @@
     pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:pinIdentify];
     
     if (pinView == nil) {
-        pinView = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pinIdentify]autorelease];
+        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pinIdentify];
         
         pinView.pinColor = MKPinAnnotationColorRed;
         pinView.canShowCallout = YES;

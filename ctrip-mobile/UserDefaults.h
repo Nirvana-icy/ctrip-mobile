@@ -10,15 +10,15 @@
 
 @interface UserDefaults : NSObject
 
-@property (nonatomic,retain) NSString *cityName;
-@property (nonatomic,retain) NSString *keyWords;
+@property (nonatomic,strong) NSString *cityName;
+@property (nonatomic,strong) NSString *keyWords;
 
-@property (nonatomic,retain) NSString *beginDate;
-@property (nonatomic,retain) NSString *endDate;
-@property (nonatomic,retain) NSString *timeRange;
+@property (nonatomic,strong) NSString *beginDate;
+@property (nonatomic,strong) NSString *endDate;
+@property (nonatomic,strong) NSString *timeRange;
 
-@property (nonatomic,retain) NSString *lowPrice;
-@property (nonatomic,retain) NSString *upperPrice;
-@property (nonatomic,retain) NSString *sortType;
+@property (nonatomic,strong) NSString *lowPrice;
+@property (nonatomic,strong) NSString *upperPrice;
+@property (nonatomic,strong) NSString *sortType;
 
 @end

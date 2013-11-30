@@ -16,8 +16,8 @@
     UIScrollView *_scrollView;
     UIPageControl *_pageControl;
     
-    id<XLCycleScrollViewDelegate> _delegate;
-    id<XLCycleScrollViewDatasource> _datasource;
+    id<XLCycleScrollViewDelegate> __weak _delegate;
+    id<XLCycleScrollViewDatasource> __weak _datasource;
     
     NSInteger _totalPages;
     NSInteger _curPage;
@@ -28,8 +28,8 @@
 @property (nonatomic,readonly) UIScrollView *scrollView;
 @property (nonatomic,readonly) UIPageControl *pageControl;
 @property (nonatomic,assign) NSInteger currentPage;
-@property (nonatomic,assign,setter = setDataource:) id<XLCycleScrollViewDatasource> datasource;
-@property (nonatomic,assign,setter = setDelegate:) id<XLCycleScrollViewDelegate> delegate;
+@property (nonatomic,weak,setter = setDataource:) id<XLCycleScrollViewDatasource> datasource;
+@property (nonatomic,weak,setter = setDelegate:) id<XLCycleScrollViewDelegate> delegate;
 
 - (void)reloadData;
 - (void)setViewContent:(UIView *)view atIndex:(NSInteger)index;

@@ -20,7 +20,7 @@
 #import "MDescriptionController.h"
 @interface MItemDetailController ()
 
-@property (nonatomic,retain)NSArray *cellHeightValues;
+@property (nonatomic,strong)NSArray *cellHeightValues;
 @end
 
 @implementation MItemDetailController{
@@ -48,12 +48,12 @@
 
 -(void)orderProduct
 {
-    TOrder *order = [[[TOrder alloc] init]autorelease];
+    TOrder *order = [[TOrder alloc] init];
     order.productID = [ NSString stringWithFormat:@"%d",self.detail.productID];
     order.productName = self.detail.name;
     order.price = self.detail.price;
     
-    MOrderCreateController *controller = [[[MOrderCreateController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+    MOrderCreateController *controller = [[MOrderCreateController alloc] initWithStyle:UITableViewStyleGrouped];
     
     controller.order = order;
     
@@ -64,7 +64,7 @@
 {
     NSString *shareURL = self.detail.oURL;
     NSArray *shareObjects = [NSArray arrayWithObjects:shareURL, nil];
-    UIActivityViewController *controller = [[[UIActivityViewController alloc] initWithActivityItems:shareObjects applicationActivities:nil] autorelease];
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:shareObjects applicationActivities:nil];
     
     controller.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard,UIActivityTypeAssignToContact,UIActivityTypeSaveToCameraRoll];
     
@@ -81,7 +81,7 @@
     UIEdgeInsets inset = UIEdgeInsetsMake(0, 0, 0, 0);
     self.tableView.contentInset = inset;
     //back button
-    UIBarButtonItem *backButton = [[[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:nil] autorelease];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:nil];
     
     self.navigationItem.backBarButtonItem = backButton;
     
@@ -89,7 +89,7 @@
     float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     
     if (systemVersion>6.0) {
-        UIBarButtonItem *barItem = [[[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStyleBordered target:self action:@selector(share)] autorelease];
+        UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStyleBordered target:self action:@selector(share)];
         
         self.navigationItem.rightBarButtonItem = barItem;
     }
@@ -103,12 +103,6 @@
 
 
 
--(void)dealloc
-{
-    [_cellHeightValues release];
-    [_detail release];
-    [super dealloc];
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -125,7 +119,7 @@
 
 -(UIView *) pageAtIndex:(NSInteger)index
 {
-    UIImageView *imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 300, 180)] autorelease];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 300, 180)];
     
     NSDictionary *dict = [self.detail.imageDictList objectAtIndex:index];
     
@@ -139,7 +133,7 @@
     [layer setMasksToBounds:YES];
     [layer setCornerRadius:7.0];
     
-    UIView *view = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)]autorelease];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
     view.backgroundColor = [UIColor grayColor];
     [view addSubview:imageView];
    
@@ -197,7 +191,7 @@
 
     
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentify] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentify];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -206,7 +200,7 @@
         
         
         if (section == 0) {
-            XLCycleScrollView *csView = [[[XLCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 220)] autorelease];
+            XLCycleScrollView *csView = [[XLCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 220)];
             csView.datasource =self;
             csView.delegate = self;
             csView.backgroundColor = [UIColor grayColor];
@@ -294,8 +288,7 @@
     
     if (section == 2 && row == 1) {
         //address view
-        //MMapController *controller = [[[MMapController alloc] init] autorelease];
-        AMapController *controller = [[[AMapController alloc] init] autorelease];
+        AMapController *controller = [[AMapController alloc] init];
         
         controller.name = [NSString stringWithString:self.detail.name];
         controller.address = [NSString stringWithString:self.detail.address];
@@ -316,7 +309,6 @@
         
         [alert show];
         
-        [alert release];
         
     }
     
@@ -324,7 +316,7 @@
     NSArray *descriptionList = @[self.detail.descList,self.detail.headDescList,self.detail.ruleDescList];
     
     if (section ==2 && row > 2) {
-        MDescriptionController *controller = [[[MDescriptionController alloc] initWithDescription:[descriptionList objectAtIndex:row-3]]autorelease];
+        MDescriptionController *controller = [[MDescriptionController alloc] initWithDescription:[descriptionList objectAtIndex:row-3]];
         
         controller.title = [titleList objectAtIndex:row-3];
         

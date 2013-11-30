@@ -16,7 +16,7 @@
 {
     SDCachedURLResponse *wrappedResponse = [[SDCachedURLResponse alloc] init];
     wrappedResponse.response = response;
-    return [wrappedResponse autorelease];
+    return wrappedResponse;
 }
 
 #pragma mark NSCopying Methods
@@ -27,7 +27,7 @@
 
     if (newResponse)
     {
-        newResponse.response = [[self.response copyWithZone:zone] autorelease];
+        newResponse.response = [self.response copyWithZone:zone];
     }
 
     return newResponse;
@@ -47,10 +47,10 @@
 {
     if ((self = [super init]))
     {
-        self.response = [[[NSCachedURLResponse alloc] initWithResponse:[coder decodeObjectForKey:@"response"]
+        self.response = [[NSCachedURLResponse alloc] initWithResponse:[coder decodeObjectForKey:@"response"]
                                                                   data:[coder decodeDataObject]
                                                               userInfo:[coder decodeObjectForKey:@"userInfo"]
-                                                         storagePolicy:[coder decodeIntForKey:@"storagePolicy"]] autorelease];
+                                                         storagePolicy:[coder decodeIntForKey:@"storagePolicy"]];
     }
 
     return self;
@@ -58,8 +58,7 @@
 
 - (void)dealloc
 {
-    [response release], response = nil;
-    [super dealloc];
+    response = nil;
 }
 
 @end

@@ -9,7 +9,7 @@
 #import "MDescriptionController.h"
 #import "NSString+Category.h"
 @interface MDescriptionController ()
-@property (retain,nonatomic) NSObject *description;
+@property (strong,nonatomic) NSObject *description;
 @end
 
 @implementation MDescriptionController
@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
     
-    UITextView *textView = [[[UITextView alloc] initWithFrame:self.view.bounds]autorelease];
+    UITextView *textView = [[UITextView alloc] initWithFrame:self.view.bounds];
     self.view = textView;
     
     if ([self.description isKindOfClass:[NSArray class]]) {
@@ -69,10 +69,5 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)dealloc
-{
-    [_description release];
-    [super dealloc];
-}
 
 @end

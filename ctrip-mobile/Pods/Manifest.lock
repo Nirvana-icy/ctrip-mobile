@@ -1,0 +1,13 @@
+PODS:
+  - MRProgress (0.2.2)
+  - WYPopoverController (0.1.7)
+
+DEPENDENCIES:
+  - MRProgress (~> 0.2)
+  - WYPopoverController (~> 0.1.7)
+
+SPEC CHECKSUMS:
+  MRProgress: 51af562344c3fe38ce3c0617fd064f6f1ce55cd5
+  WYPopoverController: 729963b2405c7763c99393a254021de9bffde763
+
+COCOAPODS: 0.28.0

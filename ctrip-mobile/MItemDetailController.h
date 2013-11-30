@@ -13,5 +13,5 @@
 #import "XLCycleScrollView.h"
 @interface MItemDetailController :UITableViewController <UIAlertViewDelegate,jsonDelegate,XLCycleScrollViewDatasource,XLCycleScrollViewDelegate>
 
-@property (retain,nonatomic)ItemDetail *detail;
+@property (strong,nonatomic)ItemDetail *detail;
 @end

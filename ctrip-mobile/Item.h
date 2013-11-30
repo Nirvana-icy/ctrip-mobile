@@ -11,10 +11,10 @@
 @interface Item : NSObject
 
 @property (nonatomic,assign) NSUInteger productID;
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *price;
-@property (nonatomic,retain) NSString *desc;
-@property (nonatomic, retain) NSString *thumbnailURL;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *price;
+@property (nonatomic,strong) NSString *desc;
+@property (nonatomic, strong) NSString *thumbnailURL;
 
 -(id)initWithDictionary:(NSDictionary *)dictionary;
 @end

@@ -9,7 +9,7 @@
 #import "NSString+Category.h"
 
 typedef struct {
-	NSString *escapeSequence;
+	__unsafe_unretained NSString *escapeSequence;
 	unichar uchar;
 } HTMLEscapeMap;
 
@@ -513,95 +513,93 @@ static int EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
 - (NSString *)stringByConvertingHTMLToPlainText {
     
 	// Pool
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	@autoreleasepool {
     
 	// Character sets
-	NSCharacterSet *stopCharacters = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"< \t\n\r%c%c%c%c", 0x0085, 0x000C, 0x2028, 0x2029]];
-	NSCharacterSet *newLineAndWhitespaceCharacters = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@" \t\n\r%c%c%c%c", 0x0085, 0x000C, 0x2028, 0x2029]];
-	NSCharacterSet *tagNameCharacters = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+		NSCharacterSet *stopCharacters = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"< \t\n\r%c%c%c%c", 0x0085, 0x000C, 0x2028, 0x2029]];
+		NSCharacterSet *newLineAndWhitespaceCharacters = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@" \t\n\r%c%c%c%c", 0x0085, 0x000C, 0x2028, 0x2029]];
+		NSCharacterSet *tagNameCharacters = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"];
     
-	// Scan and find all tags
-	NSMutableString *result = [[NSMutableString alloc] initWithCapacity:self.length];
-	NSScanner *scanner = [[NSScanner alloc] initWithString:self];
-	[scanner setCharactersToBeSkipped:nil];
-	[scanner setCaseSensitive:YES];
-	NSString *str = nil, *tagName = nil;
-	BOOL dontReplaceTagWithSpace = NO;
-	do {
+		// Scan and find all tags
+		NSMutableString *result = [[NSMutableString alloc] initWithCapacity:self.length];
+		NSScanner *scanner = [[NSScanner alloc] initWithString:self];
+		[scanner setCharactersToBeSkipped:nil];
+		[scanner setCaseSensitive:YES];
+		NSString *str = nil, *tagName = nil;
+		BOOL dontReplaceTagWithSpace = NO;
+		do {
         
-		// Scan up to the start of a tag or whitespace
-		if ([scanner scanUpToCharactersFromSet:stopCharacters intoString:&str]) {
-			[result appendString:str];
-			str = nil; // reset
-		}
+			// Scan up to the start of a tag or whitespace
+			if ([scanner scanUpToCharactersFromSet:stopCharacters intoString:&str]) {
+				[result appendString:str];
+				str = nil; // reset
+			}
         
-		// Check if we've stopped at a tag/comment or whitespace
-		if ([scanner scanString:@"<" intoString:NULL]) {
+			// Check if we've stopped at a tag/comment or whitespace
+			if ([scanner scanString:@"<" intoString:NULL]) {
             
-			// Stopped at a comment or tag
-			if ([scanner scanString:@"!--" intoString:NULL]) {
+				// Stopped at a comment or tag
+				if ([scanner scanString:@"!--" intoString:NULL]) {
                 
-				// Comment
-				[scanner scanUpToString:@"-->" intoString:NULL];
-				[scanner scanString:@"-->" intoString:NULL];
+					// Comment
+					[scanner scanUpToString:@"-->" intoString:NULL];
+					[scanner scanString:@"-->" intoString:NULL];
                 
-			} else {
+				} else {
                 
-				// Tag - remove and replace with space unless it's
-				// a closing inline tag then dont replace with a space
-				if ([scanner scanString:@"/" intoString:NULL]) {
+					// Tag - remove and replace with space unless it's
+					// a closing inline tag then dont replace with a space
+					if ([scanner scanString:@"/" intoString:NULL]) {
                     
-					// Closing tag - replace with space unless it's inline
-					tagName = nil; dontReplaceTagWithSpace = NO;
-					if ([scanner scanCharactersFromSet:tagNameCharacters intoString:&tagName]) {
-						tagName = [tagName lowercaseString];
-						dontReplaceTagWithSpace = ([tagName isEqualToString:@"a"] ||
-												   [tagName isEqualToString:@"b"] ||
-												   [tagName isEqualToString:@"i"] ||
-												   [tagName isEqualToString:@"q"] ||
-												   [tagName isEqualToString:@"span"] ||
-												   [tagName isEqualToString:@"em"] ||
-												   [tagName isEqualToString:@"strong"] ||
-												   [tagName isEqualToString:@"cite"] ||
-												   [tagName isEqualToString:@"abbr"] ||
-												   [tagName isEqualToString:@"acronym"] ||
-												   [tagName isEqualToString:@"label"]);
+						// Closing tag - replace with space unless it's inline
+						tagName = nil; dontReplaceTagWithSpace = NO;
+						if ([scanner scanCharactersFromSet:tagNameCharacters intoString:&tagName]) {
+							tagName = [tagName lowercaseString];
+							dontReplaceTagWithSpace = ([tagName isEqualToString:@"a"] ||
+													   [tagName isEqualToString:@"b"] ||
+													   [tagName isEqualToString:@"i"] ||
+													   [tagName isEqualToString:@"q"] ||
+													   [tagName isEqualToString:@"span"] ||
+													   [tagName isEqualToString:@"em"] ||
+													   [tagName isEqualToString:@"strong"] ||
+													   [tagName isEqualToString:@"cite"] ||
+													   [tagName isEqualToString:@"abbr"] ||
+													   [tagName isEqualToString:@"acronym"] ||
+													   [tagName isEqualToString:@"label"]);
+						}
+                    
+						// Replace tag with string unless it was an inline
+						if (!dontReplaceTagWithSpace && result.length > 0 && ![scanner isAtEnd]) [result appendString:@" "];
+                    
 					}
-                    
-					// Replace tag with string unless it was an inline
-					if (!dontReplaceTagWithSpace && result.length > 0 && ![scanner isAtEnd]) [result appendString:@" "];
-                    
+                
+					// Scan past tag
+					[scanner scanUpToString:@">" intoString:NULL];
+					[scanner scanString:@">" intoString:NULL];
+                
 				}
-                
-				// Scan past tag
-				[scanner scanUpToString:@">" intoString:NULL];
-				[scanner scanString:@">" intoString:NULL];
-                
+            
+			} else {
+            
+				// Stopped at whitespace - replace all whitespace and newlines with a space
+				if ([scanner scanCharactersFromSet:newLineAndWhitespaceCharacters intoString:NULL]) {
+					if (result.length > 0 && ![scanner isAtEnd]) [result appendString:@" "]; // Dont append space to beginning or end of result
+				}
+            
 			}
-            
-		} else {
-            
-			// Stopped at whitespace - replace all whitespace and newlines with a space
-			if ([scanner scanCharactersFromSet:newLineAndWhitespaceCharacters intoString:NULL]) {
-				if (result.length > 0 && ![scanner isAtEnd]) [result appendString:@" "]; // Dont append space to beginning or end of result
-			}
-            
-		}
         
-	} while (![scanner isAtEnd]);
+		} while (![scanner isAtEnd]);
     
-	// Cleanup
-	[scanner release];
+		// Cleanup
     
-	// Decode HTML entities and return
-	NSString *retString = [[result stringByDecodingHTMLEntities] retain];
-	[result release];
+		// Decode HTML entities and return
+		NSString *retString = [result stringByDecodingHTMLEntities];
     
-	// Drain
-	[pool drain];
+		// Drain
     
-	// Return
-	return [retString autorelease];
+		// Return
+		return retString;
+	}
     
 }
 
@@ -622,9 +620,6 @@ static int EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
 }
 
 - (NSString *)stringWithNewLinesAsBRs {
-    
-	// Pool
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
 	// Strange New lines:
 	//	Next Line, U+0085
@@ -668,23 +663,17 @@ static int EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
 	} while (![scanner isAtEnd]);
     
 	// Cleanup & return
-	[scanner release];
-	NSString *retString = [[NSString stringWithString:result] retain];
-	[result release];
-    
-	// Drain
-	[pool drain];
-    
+	NSString *retString = [NSString stringWithString:result];
+	
+	
 	// Return
-	return [retString autorelease];
+	return retString;
     
 }
 
 - (NSString *)stringByRemovingNewLinesAndWhitespace {
     
-	// Pool
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    
+	
 	// Strange New lines:
 	//	Next Line, U+0085
 	//	Form Feed, U+000C
@@ -714,37 +703,27 @@ static int EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
         
 	}
     
-	// Cleanup
-	[scanner release];
-    
+	
 	// Return
-	NSString *retString = [[NSString stringWithString:result] retain];
-	[result release];
-    
-	// Drain
-	[pool drain];
-    
+	NSString *retString = [NSString stringWithString:result];
+	
 	// Return
-	return [retString autorelease];
+	return retString ;
     
 }
 
 - (NSString *)stringByLinkifyingURLs {
     if (!NSClassFromString(@"NSRegularExpression")) return self;
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    NSString *pattern = @"(?<!=\")\\b((http|https):\\/\\/[\\w\\-_]+(\\.[\\w\\-_]+)+([\\w\\-\\.,@?^=%%&amp;:/~\\+#]*[\\w\\-\\@?^=%%&amp;/~\\+#])?)";
+	NSString *pattern = @"(?<!=\")\\b((http|https):\\/\\/[\\w\\-_]+(\\.[\\w\\-_]+)+([\\w\\-\\.,@?^=%%&amp;:/~\\+#]*[\\w\\-\\@?^=%%&amp;/~\\+#])?)";
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
-    NSString *modifiedString = [[regex stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, [self length])
-                                                           withTemplate:@"<a href=\"$1\" class=\"linkified\">$1</a>"] retain];
-    [pool drain];
-    return [modifiedString autorelease];
+    NSString *modifiedString = [regex stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, [self length])
+                                                           withTemplate:@"<a href=\"$1\" class=\"linkified\">$1</a>"];
+    return modifiedString;
 }
 
 - (NSString *)stringByStrippingTags {
     
-	// Pool
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    
+	
 	// Find first & and short-cut if we can
 	NSUInteger ampIndex = [self rangeOfString:@"<" options:NSLiteralSearch].location;
 	if (ampIndex == NSNotFound) {
@@ -767,7 +746,6 @@ static int EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
 		if (tag) {
 			NSString *t = [[NSString alloc] initWithFormat:@"%@>", tag];
 			[tags addObject:t];
-			[t release];
 		}
         
 	} while (![scanner isAtEnd]);
@@ -801,33 +779,25 @@ static int EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
 	}
     
 	// Remove multi-spaces and line breaks
-	finalString = [[result stringByRemovingNewLinesAndWhitespace] retain];
+	finalString = [result stringByRemovingNewLinesAndWhitespace];
     
-	// Cleanup
-	[result release];
-	[tags release];
-    
-	// Drain
-	[pool drain];
-    
+	
 	// Return
-    return [finalString autorelease];
+    return finalString;
     
 }
 
 - (NSString *)URLEncode{
     if ([self length] == 0) {
         NSString *str_empty = @"";
-        [str_empty autorelease];
         return str_empty;
     }
-    NSString *result = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+    NSString *result = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
                                                                            (CFStringRef)self,
                                                                            NULL,
 																		   CFSTR("!*'();:@&=+$,/?%#[]"),
-                                                                           kCFStringEncodingUTF8);
-    [result autorelease];
-	return result;
+                                                                           kCFStringEncodingUTF8));
+    return result;
 }
 
 - (NSString*)URLDecode
@@ -836,12 +806,11 @@ static int EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
         return @"";
     }
     
-	NSString *result = (NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault,
+	NSString *result = (NSString *)CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault,
 																						   (CFStringRef)self,
 																						   CFSTR(""),
-																						   kCFStringEncodingUTF8);
-    [result autorelease];
-	return result;
+																						   kCFStringEncodingUTF8));
+    return result;
 }
 
 @end

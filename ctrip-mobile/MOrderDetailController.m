@@ -15,7 +15,7 @@
 #import "Const.h"
 
 @interface MOrderDetailController ()
-@property (nonatomic,retain)OrderEntity *order;
+@property (nonatomic,strong)OrderEntity *order;
 @end
 
 @implementation MOrderDetailController
@@ -59,9 +59,9 @@
         
     }
     
-    MItemDetailController *controller = [[[MItemDetailController alloc] init] autorelease];
+    MItemDetailController *controller = [[MItemDetailController alloc] init];
     
-    ItemDetail *detail = [[[ItemDetail alloc] initWithDictionary:(NSDictionary *)json]autorelease];
+    ItemDetail *detail = [[ItemDetail alloc] initWithDictionary:(NSDictionary *)json];
     
     controller.detail = detail;
     
@@ -110,9 +110,8 @@
 }
 -(void)dealloc
 {
-    [self.orderID release];
-    [self.order release];
-    [super dealloc];
+    self.orderID;
+    self.order;
     
 }
 
@@ -148,7 +147,7 @@
     
     if (cell == nil) {
         
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
     NSUInteger section = [indexPath section];
@@ -247,7 +246,6 @@
                 
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您真的要退款吗？" message:nil cancelButtonItem:cancelItem otherButtonItems:okItem, nil];
                 [alert show];
-                [alert release];
             }
             else if([self.order.orderStatus isEqualToString:@"未提交"]){
                 okItem.action = ^{
@@ -259,7 +257,6 @@
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"即将打开Safari\n前往支付页面，是否继续？" message:nil cancelButtonItem:cancelItem otherButtonItems:okItem, nil];
                 
                 [alert show];
-                [alert release];
             }
             
             

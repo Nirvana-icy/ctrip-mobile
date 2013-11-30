@@ -36,16 +36,15 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
     [dateFormatter setLocale:locale];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
     [dateFormatter setDateFormat:format];
-    [locale release];
     
-    return [dateFormatter autorelease];
+    return dateFormatter;
 }
 
 @interface SDURLCache ()
-@property (nonatomic, retain) NSString *diskCachePath;
-@property (nonatomic, readonly) NSMutableDictionary *diskCacheInfo;
-@property (nonatomic, retain) NSOperationQueue *ioQueue;
-@property (retain) NSOperation *periodicMaintenanceOperation;
+@property (nonatomic, strong) NSString *diskCachePath;
+@property (weak, nonatomic, readonly) NSMutableDictionary *diskCacheInfo;
+@property (nonatomic, strong) NSOperationQueue *ioQueue;
+@property (strong) NSOperation *periodicMaintenanceOperation;
 - (void)periodicMaintenance;
 @end
 
@@ -63,7 +62,7 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
     if (hash.location == NSNotFound)
         return request;
 
-    NSMutableURLRequest *copy = [[request mutableCopy] autorelease];
+    NSMutableURLRequest *copy = [request mutableCopy];
     copy.URL = [NSURL URLWithString:[string substringToIndex:hash.location]];
     return copy;
 }
@@ -90,17 +89,17 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
     @synchronized(self) // NSDateFormatter isn't thread safe
     {
         // RFC 1123 date format - Sun, 06 Nov 1994 08:49:37 GMT
-        if (!RFC1123DateFormatter) RFC1123DateFormatter = [CreateDateFormatter(@"EEE, dd MMM yyyy HH:mm:ss z") retain];
+        if (!RFC1123DateFormatter) RFC1123DateFormatter = CreateDateFormatter(@"EEE, dd MMM yyyy HH:mm:ss z");
         date = [RFC1123DateFormatter dateFromString:httpDate];
         if (!date)
         {
             // ANSI C date format - Sun Nov  6 08:49:37 1994
-            if (!ANSICDateFormatter) ANSICDateFormatter = [CreateDateFormatter(@"EEE MMM d HH:mm:ss yyyy") retain];
+            if (!ANSICDateFormatter) ANSICDateFormatter = CreateDateFormatter(@"EEE MMM d HH:mm:ss yyyy");
             date = [ANSICDateFormatter dateFromString:httpDate];
             if (!date)
             {
                 // RFC 850 date format - Sunday, 06-Nov-94 08:49:37 GMT
-                if (!RFC850DateFormatter) RFC850DateFormatter = [CreateDateFormatter(@"EEEE, dd-MMM-yy HH:mm:ss z") retain];
+                if (!RFC850DateFormatter) RFC850DateFormatter = CreateDateFormatter(@"EEEE, dd-MMM-yy HH:mm:ss z");
                 date = [RFC850DateFormatter dateFromString:httpDate];
             }
         }
@@ -163,7 +162,7 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
             {
                 if (maxAge > 0)
                 {
-                    return [[[NSDate alloc] initWithTimeInterval:maxAge sinceDate:now] autorelease];
+                    return [[NSDate alloc] initWithTimeInterval:maxAge sinceDate:now];
                 }
                 else
                 {
@@ -223,7 +222,7 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
     }
 
     // If nothing permitted to define the cache expiration delay nor to restrict its cacheability, use a default cache expiration delay
-    return [[[NSDate alloc] initWithTimeInterval:kSDURLCacheDefault sinceDate:now] autorelease];
+    return [[NSDate alloc] initWithTimeInterval:kSDURLCacheDefault sinceDate:now];
 
 }
 
@@ -250,11 +249,11 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
 
                 diskCacheUsage = [[diskCacheInfo objectForKey:kSDURLCacheInfoDiskUsageKey] unsignedIntValue];
 
-                periodicMaintenanceTimer = [[NSTimer scheduledTimerWithTimeInterval:5
+                periodicMaintenanceTimer = [NSTimer scheduledTimerWithTimeInterval:5
                                                                              target:self
                                                                            selector:@selector(periodicMaintenance)
                                                                            userInfo:nil
-                                                                            repeats:YES] retain];
+                                                                            repeats:YES];
             }
         }
     }
@@ -272,7 +271,6 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
                                 attributes:nil
                                      error:NULL];
     }
-    [fileManager release];
 }
 
 - (void)saveCacheInfo
@@ -292,31 +290,30 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
 
 - (void)removeCachedResponseForCachedKeys:(NSArray *)cacheKeys
 {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    @autoreleasepool {
 
-    NSEnumerator *enumerator = [cacheKeys objectEnumerator];
-    NSString *cacheKey;
+        NSEnumerator *enumerator = [cacheKeys objectEnumerator];
+        NSString *cacheKey;
 
-    @synchronized(self.diskCacheInfo)
-    {
-        NSMutableDictionary *accesses = [self.diskCacheInfo objectForKey:kSDURLCacheInfoAccessesKey];
-        NSMutableDictionary *sizes = [self.diskCacheInfo objectForKey:kSDURLCacheInfoSizesKey];
-        NSFileManager *fileManager = [[NSFileManager alloc] init];
-
-        while ((cacheKey = [enumerator nextObject]))
+        @synchronized(self.diskCacheInfo)
         {
-            NSUInteger cacheItemSize = [[sizes objectForKey:cacheKey] unsignedIntegerValue];
-            [accesses removeObjectForKey:cacheKey];
-            [sizes removeObjectForKey:cacheKey];
-            [fileManager removeItemAtPath:[diskCachePath stringByAppendingPathComponent:cacheKey] error:NULL];
+            NSMutableDictionary *accesses = [self.diskCacheInfo objectForKey:kSDURLCacheInfoAccessesKey];
+            NSMutableDictionary *sizes = [self.diskCacheInfo objectForKey:kSDURLCacheInfoSizesKey];
+            NSFileManager *fileManager = [[NSFileManager alloc] init];
 
-            diskCacheUsage -= cacheItemSize;
-            [self.diskCacheInfo setObject:[NSNumber numberWithUnsignedInteger:diskCacheUsage] forKey:kSDURLCacheInfoDiskUsageKey];
+            while ((cacheKey = [enumerator nextObject]))
+            {
+                NSUInteger cacheItemSize = [[sizes objectForKey:cacheKey] unsignedIntegerValue];
+                [accesses removeObjectForKey:cacheKey];
+                [sizes removeObjectForKey:cacheKey];
+                [fileManager removeItemAtPath:[diskCachePath stringByAppendingPathComponent:cacheKey] error:NULL];
+
+                diskCacheUsage -= cacheItemSize;
+                [self.diskCacheInfo setObject:[NSNumber numberWithUnsignedInteger:diskCacheUsage] forKey:kSDURLCacheInfoDiskUsageKey];
+            }
         }
-        [fileManager release];
-    }
 
-    [pool drain];
+    }
 }
 
 - (void)balanceDiskUsage
@@ -372,7 +369,6 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
     // Update disk usage info
     NSFileManager *fileManager = [[NSFileManager alloc] init];
     NSNumber *cacheItemSize = [[fileManager attributesOfItemAtPath:cacheFilePath error:NULL] objectForKey:NSFileSize];
-    [fileManager release];
     @synchronized(self.diskCacheInfo)
     {
         diskCacheUsage += [cacheItemSize unsignedIntegerValue];
@@ -400,14 +396,12 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
         NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(balanceDiskUsage) object:nil];
         self.periodicMaintenanceOperation = operation;
         [ioQueue addOperation:periodicMaintenanceOperation];
-        [operation release];
     }
     else if (diskCacheInfoDirty)
     {
         NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(saveCacheInfo) object:nil];
         self.periodicMaintenanceOperation = operation;
         [ioQueue addOperation:periodicMaintenanceOperation];
-        [operation release];
     }
 }
 
@@ -442,7 +436,6 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
         // Init the operation queue
         NSOperationQueue *queue = [[NSOperationQueue alloc] init];
         self.ioQueue = queue;
-        [queue release];
         
         ioQueue.maxConcurrentOperationCount = 1; // used to streamline operations in a separate thread
         self.ignoreMemoryOnlyStoragePolicy = YES;
@@ -510,7 +503,6 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
                                                                                       request, @"request",
                                                                                       nil]];
         [ioQueue addOperation:operation];
-        [operation release];
     }
 }
 
@@ -599,11 +591,10 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
     if (disabled) return;
     NSFileManager *fileManager = [[NSFileManager alloc] init];
     [fileManager removeItemAtPath:diskCachePath error:NULL];
-    [fileManager release];
     
     @synchronized(self)
     {
-        [diskCacheInfo release], diskCacheInfo = nil;
+        diskCacheInfo = nil;
     }
 }
 
@@ -624,7 +615,6 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
     NSFileManager *manager = [[NSFileManager alloc] init];
     
     BOOL exists = [manager fileExistsAtPath:cacheFile];
-    [manager release];
     
     if (exists)
     {
@@ -639,17 +629,15 @@ static NSDateFormatter* CreateDateFormatter(NSString *format)
 {
     if (disabled)
     {
-        [super dealloc];
         return;
     }
 
     [periodicMaintenanceTimer invalidate];
-    [periodicMaintenanceTimer release], periodicMaintenanceTimer = nil;
-    [periodicMaintenanceOperation release], periodicMaintenanceOperation = nil;
-    [diskCachePath release], diskCachePath = nil;
-    [diskCacheInfo release], diskCacheInfo = nil;
-    [ioQueue release], ioQueue = nil;
-    [super dealloc];
+    periodicMaintenanceTimer = nil;
+    periodicMaintenanceOperation = nil;
+    diskCachePath = nil;
+    diskCacheInfo = nil;
+    ioQueue = nil;
 }
 
 

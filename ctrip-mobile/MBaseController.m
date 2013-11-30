@@ -34,23 +34,18 @@
     return self;
 }
 
--(void) dealloc
-{
-    [_network release];
-    [super dealloc];
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     //set back button in navigation bar
-    UIBarButtonItem *backButton = [[[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:nil] autorelease];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:nil];
     
     self.navigationItem.backBarButtonItem =backButton;
     
     // Assign our own backgroud for the view
-    UIImageView *backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_bg.png"]] autorelease];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"common_bg.png"]];
     self.tableView.backgroundView = backgroundView;
     
     // Add padding to the top of the table view

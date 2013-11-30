@@ -12,7 +12,7 @@
 @interface AMapController : UIViewController<MAMapViewDelegate>
 
 @property (assign,nonatomic)CLLocationCoordinate2D coordinate;
-@property (retain,nonatomic)NSString *name;
-@property (retain,nonatomic)NSString *address;
+@property (strong,nonatomic)NSString *name;
+@property (strong,nonatomic)NSString *address;
 
 @end

@@ -10,7 +10,7 @@
 
 @interface SDCachedURLResponse : NSObject <NSCoding, NSCopying>
 
-@property (nonatomic, retain) NSCachedURLResponse *response;
+@property (nonatomic, strong) NSCachedURLResponse *response;
 
 + (id)cachedURLResponseWithNSCachedURLResponse:(NSCachedURLResponse *)response;
 

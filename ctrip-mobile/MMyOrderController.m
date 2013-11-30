@@ -20,7 +20,7 @@
 #import "SBJSON.h"
 @interface MMyOrderController ()
 
-@property (nonatomic,retain) NSArray *orderEntitys;
+@property (nonatomic,strong) NSArray *orderEntitys;
 @end
 
 @implementation MMyOrderController
@@ -97,7 +97,7 @@
             NSLog(@"@124,%@",d);
         }
         
-        MOrderDetailController *controller =  [[[MOrderDetailController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+        MOrderDetailController *controller =  [[MOrderDetailController alloc] initWithStyle:UITableViewStyleGrouped];
         controller.orderID = orderID;
         
         [self.navigationController pushViewController:controller animated:YES];
@@ -122,7 +122,6 @@
     NSArray *results = [context executeFetchRequest:request error:nil];
     
     self.orderEntitys = results;
-    [request release];
     
     [self.tableView reloadData];
 }
@@ -217,7 +216,7 @@
     // Remove table cell separator
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    UIBarButtonItem *refreshItem  = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshTableView)] autorelease];
+    UIBarButtonItem *refreshItem  = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshTableView)];
     
     self.navigationItem.rightBarButtonItem = refreshItem;
     
@@ -256,12 +255,12 @@
     OrderEntity *o = [self.orderEntitys objectAtIndex:row];
     
     if (cell == nil) {
-        cell = [[[MOrderCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[MOrderCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
         UIFont *font = [UIFont systemFontOfSize:13];
         UIFont *italicFont = [UIFont italicSystemFontOfSize:13];
         
-        UILabel *productLabel = [[[UILabel alloc] init] autorelease];
+        UILabel *productLabel = [[UILabel alloc] init];
         
         
         
@@ -273,7 +272,7 @@
         
         [cell addSubview:productLabel];
         
-        UILabel *statusLabel = [[[UILabel alloc] init] autorelease];
+        UILabel *statusLabel = [[UILabel alloc] init];
         
         statusLabel.text = o.orderStatus;
         
@@ -285,7 +284,7 @@
         
         [cell addSubview:statusLabel];
         
-        UILabel *priceLabel = [[[UILabel alloc] init]autorelease];
+        UILabel *priceLabel = [[UILabel alloc] init];
         
         priceLabel.text = [NSString stringWithFormat:@"¥ %@",o.orderPrice];
         

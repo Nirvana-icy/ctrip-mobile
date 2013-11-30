@@ -26,7 +26,7 @@
 
 -(void)setJSON:(id)json fromRequest:(NSURLRequest *)request
 {
-    MSelectController *controller = [[[MSelectController alloc] initWithStyle:UITableViewStyleGrouped]autorelease];
+    MSelectController *controller = [[MSelectController alloc] initWithStyle:UITableViewStyleGrouped];
     
     
     NSMutableArray *city_list = [NSMutableArray arrayWithCapacity:35];
@@ -99,7 +99,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.textLabel.text = [self.dataList objectAtIndex:[indexPath row]];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
