@@ -118,6 +118,7 @@
 		80F21F6F173BDCC100D9A580 /* hotel1.png in Resources */ = {isa = PBXBuildFile; fileRef = 80F21F6A173BDCC100D9A580 /* hotel1.png */; };
 		80F21F70173BDCC100D9A580 /* House-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 80F21F6B173BDCC100D9A580 /* House-256.png */; };
 		80F21F71173BDCC100D9A580 /* OldHouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 80F21F6C173BDCC100D9A580 /* OldHouse.png */; };
+		AC6EA1D48479476FA2D6C995 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8521C5A10444491A50B1E6F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -259,6 +260,7 @@
 		2BF13BAB172776AA0031AE64 /* TOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOrder.m; sourceTree = "<group>"; };
 		2BF13BAD172778200031AE64 /* MOrderCreateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOrderCreateController.h; sourceTree = "<group>"; };
 		2BF13BAE172778200031AE64 /* MOrderCreateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOrderCreateController.m; sourceTree = "<group>"; };
+		5B7D50C260BC4DDFAA0D08DB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8013439E172F74D0007FEBB1 /* MMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMapController.h; sourceTree = "<group>"; };
 		8013439F172F74D0007FEBB1 /* MMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMapController.m; sourceTree = "<group>"; };
 		801343A6172F9138007FEBB1 /* home_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_selected.png; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 		80F21F6A173BDCC100D9A580 /* hotel1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotel1.png; sourceTree = "<group>"; };
 		80F21F6B173BDCC100D9A580 /* House-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House-256.png"; sourceTree = "<group>"; };
 		80F21F6C173BDCC100D9A580 /* OldHouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OldHouse.png; sourceTree = "<group>"; };
+		B8521C5A10444491A50B1E6F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +323,7 @@
 				2B17DD8717163AC600C7AB97 /* UIKit.framework in Frameworks */,
 				2B17DD8917163AC600C7AB97 /* Foundation.framework in Frameworks */,
 				2B17DD8B17163AC600C7AB97 /* CoreGraphics.framework in Frameworks */,
+				AC6EA1D48479476FA2D6C995 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +360,7 @@
 				2B17DD8C17163AC600C7AB97 /* ctrip-mobile */,
 				2B17DD8517163AC500C7AB97 /* Frameworks */,
 				2B17DD8417163AC500C7AB97 /* Products */,
+				5B7D50C260BC4DDFAA0D08DB /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -384,6 +389,7 @@
 				2B17DD8617163AC600C7AB97 /* UIKit.framework */,
 				2B17DD8817163AC600C7AB97 /* Foundation.framework */,
 				2B17DD8A17163AC600C7AB97 /* CoreGraphics.framework */,
+				B8521C5A10444491A50B1E6F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -635,9 +641,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B17DDA617163AC600C7AB97 /* Build configuration list for PBXNativeTarget "ctrip-mobile" */;
 			buildPhases = (
+				C2D233422C9946598781C9D3 /* Check Pods Manifest.lock */,
 				2B17DD7F17163AC500C7AB97 /* Sources */,
 				2B17DD8017163AC500C7AB97 /* Frameworks */,
 				2B17DD8117163AC500C7AB97 /* Resources */,
+				296B2222DA4A46A587C8DE96 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -735,6 +743,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		296B2222DA4A46A587C8DE96 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2D233422C9946598781C9D3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2B17DD7F17163AC500C7AB97 /* Sources */ = {
@@ -870,8 +911,10 @@
 		};
 		2B17DDA717163AC600C7AB97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7D50C260BC4DDFAA0D08DB /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -897,8 +940,10 @@
 		};
 		2B17DDA817163AC600C7AB97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7D50C260BC4DDFAA0D08DB /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
