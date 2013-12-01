@@ -25,6 +25,7 @@
 #import "SDURLCache.h"
 #import "APIKey.h"
 #import <MAMapKit/MAMapKit.h>
+
 /*
 #import "SWRevealViewController.h"
 #import "FrontViewController.h"
@@ -34,6 +35,11 @@
 #define requireURL  [NSString stringWithFormat:@"%@%@/?page_index=%d%@",API_BASE_URL,GROUP_LIST_PARAMTER,1,PAGE_SIZE_PARAMTER]
 
 #define kAlreadyBeenLaunched @"AlreadyBeenLaunched"
+
+@interface RococoAppDelegate()
+
+
+@end
 
 
 @implementation RococoAppDelegate
@@ -147,6 +153,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
+    [self.delegate userLocationUpdated:newLocation];
+    
     [manager stopUpdatingLocation];
     
     CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
@@ -203,7 +211,25 @@
 
 -(void)setReachability
 {
+    NSURL *baseURL = [NSURL URLWithString:@"http://www.apple.com"];
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
     
+    NSOperationQueue *operationQueue = manager.operationQueue;
+    [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                [operationQueue setSuspended:NO];
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+            default:
+                [operationQueue setSuspended:YES];
+                [[Utility sharedObject] showNotificationWithMessage:@"你的网络连接断开了" inController:self.viewController];
+                break;
+        }
+    }];
+
+    /*
     AFHTTPClient *client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://www.apple.com"]];
     [client setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         
@@ -219,7 +245,7 @@
             
             [[Utility sharedObject] showNotificationWithMessage:@"你的网络连接断开了" inController:self.viewController];
         }
-    }];
+    }];*/
     
 }
 

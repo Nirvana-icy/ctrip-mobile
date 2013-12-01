@@ -13,9 +13,11 @@
 #import "MNetWork.h"
 #import <CoreData/CoreData.h>
 #import "MNavigationController.h"
+#import "MUserLocation.h"
 
 @class MItemListController;
 @class SWRevealViewController;
+
 
 @interface RococoAppDelegate : UIResponder <UIApplicationDelegate,CLLocationManagerDelegate,jsonDelegate>
 {
@@ -36,6 +38,9 @@
 @property (nonatomic, strong, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+@property (strong,nonatomic) NSObject<MUserLocation>* delegate;
+
 
 - (NSString *)applicationDocumentsDirectory;
 - (void)saveContext;

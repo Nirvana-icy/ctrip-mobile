@@ -9,7 +9,8 @@
 #import "MSelectController.h"
 #import "Const.h"
 #import "MConfigController.h"
-#import "AFJSONRequestOperation.h"
+//#import "AFJSONRequestOperation.h"
+#import "Pods/AFNetworking/AFNetworking/AFNetworking.h"
 #import "NSString+Category.h"
 @interface MSelectController ()
 
@@ -237,7 +238,24 @@
     NSURL *url = [NSURL URLWithString:urlString];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:urlString parameters:Nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSMutableArray *city_list = [NSMutableArray arrayWithCapacity:35];
+        if ([responseObject isKindOfClass:[NSArray class]]) {
+            for (NSDictionary *dic in (NSArray *)responseObject) {
+                NSString *city = [dic valueForKey:@"name"];
+                [city_list addObject:city];
+            }
+            controller.dataList = city_list;
+            [controller.tableView reloadData];
+        }
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failed: %@",[error localizedDescription]);
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    }];
+    /*
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         
         NSMutableArray *city_list = [NSMutableArray arrayWithCapacity:35];
@@ -255,8 +273,9 @@
         NSLog(@"Failed: %@",[error localizedDescription]);
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     }];
+    
     [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
-    [operation start];
+    [operation start];*/
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 

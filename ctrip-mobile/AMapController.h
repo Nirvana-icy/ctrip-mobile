@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MAMapKit/MAMapKit.h"
+#import "AMapSearchKit/AMapSearchAPI.h"
 
-@interface AMapController : UIViewController<MAMapViewDelegate>
+@interface AMapController : UIViewController<MAMapViewDelegate,AMapSearchDelegate>
 
 @property (assign,nonatomic)CLLocationCoordinate2D coordinate;
 @property (strong,nonatomic)NSString *name;
