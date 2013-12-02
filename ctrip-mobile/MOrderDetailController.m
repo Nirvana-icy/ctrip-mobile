@@ -108,12 +108,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)dealloc
-{
-    self.orderID;
-    self.order;
-    
-}
+
 
 #pragma mark --table view delegate
 

@@ -365,11 +365,11 @@
     
     UIImageView *splashView = [[UIImageView alloc] initWithFrame:screenRect];
     splashView.image = [UIImage imageNamed:@"Default.png"];
-    
+    /*
     UIImageView *houseView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 256, 256)];
     houseView.image = [UIImage imageNamed:@"House-256.png"];
     houseView.center = CGPointMake(screenWidth/2, screenHeight*3/5);
-    [splashView addSubview:houseView];
+    [splashView addSubview:houseView];*/
     
     UIImageView *planeView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 155, 100)];
     planeView.image = [UIImage imageNamed:@"airplane.png"];
@@ -380,7 +380,7 @@
     [planeView setCenter:CGPointMake(-155/2.0, screenHeight)];
     
     [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:3.0];
+    [UIView setAnimationDuration:1.0];
     [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.window cache:YES];
     [UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];
     
@@ -388,8 +388,9 @@
     [planeView setCenter:CGPointMake(screenWidth+155/2, 0)];
     [UIView commitAnimations];
     
+    
     [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:4.0];
+    [UIView setAnimationDuration:3.0];
     [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.window cache:YES];
     [UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];
     splashView.alpha = 0.0;

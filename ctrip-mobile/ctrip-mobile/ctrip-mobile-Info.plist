@@ -8,10 +8,19 @@
 	<string>宅宅酒店团购</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFiles</key>
-	<array>
-		<string>app-icon.png</string>
-	</array>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>app-icon-120</string>
+				<string>app-icon-80</string>
+				<string>app-icon-58</string>
+				<string>app-icon</string>
+			</array>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>com.appfog.ctrip-mobile</string>
 	<key>CFBundleInfoDictionaryVersion</key>

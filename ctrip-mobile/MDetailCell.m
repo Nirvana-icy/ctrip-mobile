@@ -48,9 +48,15 @@
 -(void)resizeLabel:(UILabel *)label fitSize:(BOOL) fitSize
 {
    
+    /*
     CGSize labelSize = [label.text sizeWithFont:label.font
                             constrainedToSize:CGSizeMake(200, CGFLOAT_MAX)
-                                lineBreakMode:label.lineBreakMode];
+                                lineBreakMode:label.lineBreakMode];*/
+    
+    CGRect labelRect = [label.text boundingRectWithSize:CGSizeMake(200, CGFLOAT_MAX) options:NSStringDrawingUsesFontLeading attributes:nil context:nil];
+    
+    CGSize labelSize = labelRect.size;
+    
     
     CGFloat labelHeight = labelSize.height;
     

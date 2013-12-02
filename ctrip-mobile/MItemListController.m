@@ -95,15 +95,6 @@
    }
 
 
-
--(void)dealloc
-{
-    self.title;
-    self.items;
-}
-
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

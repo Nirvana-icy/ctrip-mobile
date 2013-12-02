@@ -49,8 +49,8 @@
     self.tableView.backgroundView = backgroundView;
     
     // Add padding to the top of the table view
-    UIEdgeInsets inset = UIEdgeInsetsMake(5, 0, 0, 0);
-    self.tableView.contentInset = inset;
+    //UIEdgeInsets inset = UIEdgeInsetsMake(5, 0, 0, 0);
+    //self.tableView.contentInset = inset;
 
 }
 

@@ -235,9 +235,7 @@
 }
 
 -(void) requireDataWithURL:(NSString *) urlString ToController:(MSelectController *)controller {
-    NSURL *url = [NSURL URLWithString:urlString];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:urlString parameters:Nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSMutableArray *city_list = [NSMutableArray arrayWithCapacity:35];

@@ -38,6 +38,7 @@
 		2B35C1911847682D00934956 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B35C1901847682D00934956 /* libstdc++.6.0.9.dylib */; };
 		2B35C1931847686E00934956 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B35C1921847686E00934956 /* Security.framework */; };
 		2B35C1951847689E00934956 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B35C1941847689E00934956 /* AMap.bundle */; };
+		2B3BE282184CC5890010FF40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B3BE281184CC5890010FF40 /* Images.xcassets */; };
 		2B774CA21720E5D400FFD9DF /* MWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B774CA11720E5D400FFD9DF /* MWindow.m */; };
 		2B774CAF17210E6A00FFD9DF /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B774CAC17210E6A00FFD9DF /* background.png */; };
 		2B774CB017210E6A00FFD9DF /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B774CAD17210E6A00FFD9DF /* page.png */; };
@@ -76,7 +77,6 @@
 		2B9ABB4917BB60CC000835A1 /* AMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9ABB4817BB60CC000835A1 /* AMapController.m */; };
 		2BABA9431844D57C00F763DD /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BABA9411844D57C00F763DD /* reveal-icon.png */; };
 		2BABA9441844D57C00F763DD /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BABA9421844D57C00F763DD /* reveal-icon@2x.png */; };
-		2BABA9481844DACC00F763DD /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BABA9471844DACC00F763DD /* SWRevealViewController.m */; };
 		2BCB41851733AFDF00B4C12E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB41841733AFDF00B4C12E /* Reachability.m */; };
 		2BD5BDA4184C14730044389A /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD5BDA3184C14730044389A /* MAMapKit.framework */; };
 		2BD5BDA6184C148B0044389A /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD5BDA5184C148B0044389A /* AMapSearchKit.framework */; };
@@ -159,6 +159,10 @@
 		2B35C1921847686E00934956 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2B35C1941847689E00934956 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		2B35C196184769F100934956 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
+		2B3BE281184CC5890010FF40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2B3BE283184CC6A40010FF40 /* app-icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-58.png"; sourceTree = "<group>"; };
+		2B3BE284184CC6D30010FF40 /* app-icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-80.png"; sourceTree = "<group>"; };
+		2B3BE285184CC7000010FF40 /* app-icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-120.png"; sourceTree = "<group>"; };
 		2B774CA01720E5D400FFD9DF /* MWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWindow.h; sourceTree = "<group>"; };
 		2B774CA11720E5D400FFD9DF /* MWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWindow.m; sourceTree = "<group>"; };
 		2B774CAC17210E6A00FFD9DF /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../background.png; sourceTree = "<group>"; };
@@ -215,8 +219,6 @@
 		2B9ABB4817BB60CC000835A1 /* AMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMapController.m; sourceTree = "<group>"; };
 		2BABA9411844D57C00F763DD /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reveal-icon.png"; path = "../reveal-icon.png"; sourceTree = "<group>"; };
 		2BABA9421844D57C00F763DD /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reveal-icon@2x.png"; path = "../reveal-icon@2x.png"; sourceTree = "<group>"; };
-		2BABA9461844DACC00F763DD /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		2BABA9471844DACC00F763DD /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		2BCB41831733AFDF00B4C12E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		2BCB41841733AFDF00B4C12E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		2BD5BDA3184C14730044389A /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
@@ -303,28 +305,16 @@
 		2B17DD7A17163AC500C7AB97 = {
 			isa = PBXGroup;
 			children = (
-				2BD5BDA7184C51AD0044389A /* MapOptions.h */,
+				2B3BE285184CC7000010FF40 /* app-icon-120.png */,
+				2B3BE284184CC6D30010FF40 /* app-icon-80.png */,
+				2B3BE283184CC6A40010FF40 /* app-icon-58.png */,
 				2B17DD9517163AC600C7AB97 /* RococoAppDelegate.h */,
 				2B17DD9617163AC600C7AB97 /* RococoAppDelegate.mm */,
-				2B86C5781849D1720074747E /* MUserLocation.h */,
-				2B86C5721849C5900074747E /* LineDashPolyline.h */,
-				2B86C5731849C5900074747E /* LineDashPolyline.m */,
-				2B86C56F1849C55E0074747E /* CommonUtility.h */,
-				2B86C5701849C55E0074747E /* CommonUtility.m */,
-				2B35C196184769F100934956 /* APIKey.h */,
-				2B35C1941847689E00934956 /* AMap.bundle */,
-				2BABA9451844DACC00F763DD /* SWRevealViewController */,
+				2B3BE280184CBB110010FF40 /* Protocols */,
+				2B3BE27F184CBAFB0010FF40 /* Utility */,
 				2B9ABB0217B092D4000835A1 /* SDURLCache */,
 				2B2E7A66174230320061B330 /* CycleScrollView */,
-				2BCB41831733AFDF00B4C12E /* Reachability.h */,
-				2BCB41841733AFDF00B4C12E /* Reachability.m */,
 				801343D8172FA8A4007FEBB1 /* Categories */,
-				80D37957172E29D6008075AF /* Utility.h */,
-				80D37958172E29D6008075AF /* Utility.m */,
-				2B774CB8172129BD00FFD9DF /* MNetWork.h */,
-				2B774CB9172129BD00FFD9DF /* MNetWork.m */,
-				2B289F96171F819100A3CE7B /* Const.h */,
-				2B289F97171F819100A3CE7B /* Const.m */,
 				2B82CBB2171E811200A5A4EC /* Controllers */,
 				2B82CB96171E395600A5A4EC /* Models */,
 				2B82CB95171E2E4700A5A4EC /* Views */,
@@ -346,6 +336,7 @@
 		2B17DD8517163AC500C7AB97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B35C1941847689E00934956 /* AMap.bundle */,
 				2B9ABB2717BB5EAD000835A1 /* OpenGLES.framework */,
 				2B9ABB0617BB5CF9000835A1 /* CoreTelephony.framework */,
 				2BD5BDA5184C148B0044389A /* AMapSearchKit.framework */,
@@ -371,6 +362,7 @@
 		2B17DD8C17163AC600C7AB97 /* ctrip-mobile */ = {
 			isa = PBXGroup;
 			children = (
+				2B3BE281184CC5890010FF40 /* Images.xcassets */,
 				2B17DD8D17163AC600C7AB97 /* Supporting Files */,
 			);
 			path = "ctrip-mobile";
@@ -395,6 +387,35 @@
 				2B2E7A68174230440061B330 /* XLCycleScrollView.m */,
 			);
 			name = CycleScrollView;
+			sourceTree = "<group>";
+		};
+		2B3BE27F184CBAFB0010FF40 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				2BCB41831733AFDF00B4C12E /* Reachability.h */,
+				2BCB41841733AFDF00B4C12E /* Reachability.m */,
+				80D37957172E29D6008075AF /* Utility.h */,
+				80D37958172E29D6008075AF /* Utility.m */,
+				2B774CB8172129BD00FFD9DF /* MNetWork.h */,
+				2B774CB9172129BD00FFD9DF /* MNetWork.m */,
+				2B289F96171F819100A3CE7B /* Const.h */,
+				2B289F97171F819100A3CE7B /* Const.m */,
+				2B35C196184769F100934956 /* APIKey.h */,
+				2B86C5721849C5900074747E /* LineDashPolyline.h */,
+				2B86C5731849C5900074747E /* LineDashPolyline.m */,
+				2B86C56F1849C55E0074747E /* CommonUtility.h */,
+				2B86C5701849C55E0074747E /* CommonUtility.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		2B3BE280184CBB110010FF40 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2BD5BDA7184C51AD0044389A /* MapOptions.h */,
+				2B86C5781849D1720074747E /* MUserLocation.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		2B774CB217210EA000FFD9DF /* Images */ = {
@@ -531,15 +552,6 @@
 			name = SDURLCache;
 			sourceTree = "<group>";
 		};
-		2BABA9451844DACC00F763DD /* SWRevealViewController */ = {
-			isa = PBXGroup;
-			children = (
-				2BABA9461844DACC00F763DD /* SWRevealViewController.h */,
-				2BABA9471844DACC00F763DD /* SWRevealViewController.m */,
-			);
-			path = SWRevealViewController;
-			sourceTree = "<group>";
-		};
 		801343D8172FA8A4007FEBB1 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,6 +651,7 @@
 				2B774CAF17210E6A00FFD9DF /* background.png in Resources */,
 				2B774CB017210E6A00FFD9DF /* page.png in Resources */,
 				2B87254A1724F62B00FC5FC7 /* MDetailCell.xib in Resources */,
+				2B3BE282184CC5890010FF40 /* Images.xcassets in Resources */,
 				80D379A7172EDE55008075AF /* NotifyCheck.png in Resources */,
 				2BABA9441844D57C00F763DD /* reveal-icon@2x.png in Resources */,
 				80D379A8172EDE55008075AF /* NotifyCheck@2x.png in Resources */,
@@ -714,7 +727,6 @@
 				2B82CBB8171E84F300A5A4EC /* MCell.m in Sources */,
 				2B82CBBD171E8A6B00A5A4EC /* MTextFieldCell.m in Sources */,
 				2B82CBC2171E9B0400A5A4EC /* UserDefaults.m in Sources */,
-				2BABA9481844DACC00F763DD /* SWRevealViewController.m in Sources */,
 				2B289F98171F819100A3CE7B /* Const.m in Sources */,
 				2B289F9C171FAF2700A3CE7B /* MSelectController.m in Sources */,
 				2B774CA21720E5D400FFD9DF /* MWindow.m in Sources */,
@@ -831,6 +843,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7D50C260BC4DDFAA0D08DB /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -863,6 +876,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7D50C260BC4DDFAA0D08DB /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

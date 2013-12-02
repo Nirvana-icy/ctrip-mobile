@@ -14,7 +14,7 @@
 #import "CommonUtility.h"
 #import "LineDashPolyline.h"
 #import "MapOptions.h"
-
+#import "Utility.h"
 @interface AMapController ()<WYPopoverControllerDelegate,MUserLocation,MapOptions>
 
 @property (nonatomic, strong) MAMapView *mapView;
@@ -72,7 +72,7 @@
 # pragma mark -- set popover appearance
 - (void)initPopoverAppearance
 {
-    UIColor* greenColor = [UIColor colorWithRed:26.f/255.f green:188.f/255.f blue:156.f/255.f alpha:0.5];
+    UIColor* greyColor = [UIColor colorWithRed:75.f/255.f green:75.f/255.f blue:75.f/255.f alpha:0.5];
     
     WYPopoverBackgroundView* popoverAppearance = [WYPopoverBackgroundView appearance];
     
@@ -93,10 +93,10 @@
     [popoverAppearance setInnerShadowColor:[UIColor clearColor]];
     [popoverAppearance setInnerShadowOffset:CGSizeMake(0, 0)];
     
-    [popoverAppearance setFillTopColor:greenColor];
-    [popoverAppearance setFillBottomColor:greenColor];
-    [popoverAppearance setOuterStrokeColor:greenColor];
-    [popoverAppearance setInnerStrokeColor:greenColor];
+    [popoverAppearance setFillTopColor:greyColor];
+    [popoverAppearance setFillBottomColor:greyColor];
+    [popoverAppearance setOuterStrokeColor:greyColor];
+    [popoverAppearance setInnerStrokeColor:greyColor];
     /*
     UINavigationBar* navBarInPopoverAppearance = [UINavigationBar appearanceWhenContainedIn:[UINavigationController class], [WYPopoverController class], nil];
     [navBarInPopoverAppearance setTitleTextAttributes: @{
@@ -117,6 +117,8 @@
 - (void)search:(id)searchRequest error:(NSString *)errInfo
 {
     NSLog(@"%s: searchRequest = %@, errInfo= %@", __func__, [searchRequest class], errInfo);
+    [[Utility sharedObject] setAlertView:@"错误" withMessage:@"很抱歉，无法获得当前路线。"];
+    
 }
 
 
