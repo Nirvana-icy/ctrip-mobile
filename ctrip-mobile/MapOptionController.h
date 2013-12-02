@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapOptions.h"
 
 @interface MapOptionController : UITableViewController
+
+@property (strong,nonatomic)NSObject<MapOptions> *delegate;
 
 @end

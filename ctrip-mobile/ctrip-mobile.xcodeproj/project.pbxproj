@@ -221,6 +221,7 @@
 		2BCB41841733AFDF00B4C12E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		2BD5BDA3184C14730044389A /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		2BD5BDA5184C148B0044389A /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
+		2BD5BDA7184C51AD0044389A /* MapOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOptions.h; sourceTree = "<group>"; };
 		2BE790401739ED8B001011FB /* airplane@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane@2x.png.png"; sourceTree = "<group>"; };
 		2BE79044173A0DA7001011FB /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		2BE79048173A1049001011FB /* transparent.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent.png.png; sourceTree = "<group>"; };
@@ -302,6 +303,7 @@
 		2B17DD7A17163AC500C7AB97 = {
 			isa = PBXGroup;
 			children = (
+				2BD5BDA7184C51AD0044389A /* MapOptions.h */,
 				2B17DD9517163AC600C7AB97 /* RococoAppDelegate.h */,
 				2B17DD9617163AC600C7AB97 /* RococoAppDelegate.mm */,
 				2B86C5781849D1720074747E /* MUserLocation.h */,

@@ -48,4 +48,7 @@
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation;
+
+- (CLLocation *)sharedUserLocation;
+
 @end

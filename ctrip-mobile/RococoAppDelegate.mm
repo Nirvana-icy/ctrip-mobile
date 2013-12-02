@@ -39,6 +39,7 @@
 
 @interface RococoAppDelegate()
 
+@property(nonatomic,strong)CLLocation *sharedLocation;
 
 @end
 
@@ -144,8 +145,17 @@
     
 }
 
+#pragma mark -- shared location method;
+
+- (CLLocation *)sharedUserLocation{
+    
+    return  self.sharedLocation;
+}
+
 
 #pragma mark - location manager delegate
+
+
     
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
@@ -154,6 +164,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
+    self.sharedLocation = newLocation;
+    
     [self.delegate userLocationUpdated:newLocation];
     
     [manager stopUpdatingLocation];
@@ -161,6 +173,7 @@
     CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
     
     [geoCoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        
         CLPlacemark *placemark = [placemarks objectAtIndex:0];
         
         NSString *cityName = [placemark.locality stringByReplacingOccurrencesOfString:@"市" withString:@""];
@@ -383,6 +396,7 @@
     [UIView commitAnimations];
     
 }
+
 # pragma mark -ipc method
 -(BOOL) application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
