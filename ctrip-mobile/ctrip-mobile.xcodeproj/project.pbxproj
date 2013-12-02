@@ -38,7 +38,6 @@
 		2B35C1911847682D00934956 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B35C1901847682D00934956 /* libstdc++.6.0.9.dylib */; };
 		2B35C1931847686E00934956 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B35C1921847686E00934956 /* Security.framework */; };
 		2B35C1951847689E00934956 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B35C1941847689E00934956 /* AMap.bundle */; };
-		2B35C19818476A8100934956 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B35C19718476A8100934956 /* MAMapKit.framework */; };
 		2B774CA21720E5D400FFD9DF /* MWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B774CA11720E5D400FFD9DF /* MWindow.m */; };
 		2B774CAF17210E6A00FFD9DF /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B774CAC17210E6A00FFD9DF /* background.png */; };
 		2B774CB017210E6A00FFD9DF /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B774CAD17210E6A00FFD9DF /* page.png */; };
@@ -57,7 +56,6 @@
 		2B82CBA9171E598400A5A4EC /* cell_top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B82CBA0171E598400A5A4EC /* cell_top@2x.png */; };
 		2B82CBAA171E598400A5A4EC /* common_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B82CBA1171E598400A5A4EC /* common_bg.png */; };
 		2B82CBAB171E598400A5A4EC /* common_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B82CBA2171E598400A5A4EC /* common_bg@2x.png */; };
-		2B82CBAE171E602000A5A4EC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B82CBAD171E602000A5A4EC /* MBProgressHUD.m */; };
 		2B82CBB1171E7A9100A5A4EC /* MConfigController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B82CBB0171E7A9000A5A4EC /* MConfigController.m */; };
 		2B82CBB5171E814100A5A4EC /* MBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B82CBB4171E814100A5A4EC /* MBaseController.m */; };
 		2B82CBB8171E84F300A5A4EC /* MCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B82CBB7171E84F300A5A4EC /* MCell.m */; };
@@ -67,7 +65,6 @@
 		2B82CBC2171E9B0400A5A4EC /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B82CBC1171E9B0400A5A4EC /* UserDefaults.m */; };
 		2B86C5711849C55E0074747E /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B86C5701849C55E0074747E /* CommonUtility.m */; };
 		2B86C5741849C5900074747E /* LineDashPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B86C5731849C5900074747E /* LineDashPolyline.m */; };
-		2B86C5761849CA0C0074747E /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B86C5751849CA0C0074747E /* AMapSearchKit.framework */; };
 		2B87254A1724F62B00FC5FC7 /* MDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8725491724F62B00FC5FC7 /* MDetailCell.xib */; };
 		2B87254F1724FD6200FC5FC7 /* ItemDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B87254E1724FD6200FC5FC7 /* ItemDetail.m */; };
 		2B8725511724FF4B00FC5FC7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8725501724FF4B00FC5FC7 /* MapKit.framework */; };
@@ -81,6 +78,8 @@
 		2BABA9441844D57C00F763DD /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BABA9421844D57C00F763DD /* reveal-icon@2x.png */; };
 		2BABA9481844DACC00F763DD /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BABA9471844DACC00F763DD /* SWRevealViewController.m */; };
 		2BCB41851733AFDF00B4C12E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB41841733AFDF00B4C12E /* Reachability.m */; };
+		2BD5BDA4184C14730044389A /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD5BDA3184C14730044389A /* MAMapKit.framework */; };
+		2BD5BDA6184C148B0044389A /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD5BDA5184C148B0044389A /* AMapSearchKit.framework */; };
 		2BE790411739ED8B001011FB /* airplane@2x.png.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BE790401739ED8B001011FB /* airplane@2x.png.png */; };
 		2BE79045173A0DA7001011FB /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BE79044173A0DA7001011FB /* white.png */; };
 		2BE79049173A1049001011FB /* transparent.png.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BE79048173A1049001011FB /* transparent.png.png */; };
@@ -125,7 +124,7 @@
 		2B17DD8A17163AC600C7AB97 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2B17DD8E17163AC600C7AB97 /* ctrip-mobile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ctrip-mobile-Info.plist"; sourceTree = "<group>"; };
 		2B17DD9017163AC600C7AB97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2B17DD9217163AC600C7AB97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2B17DD9217163AC600C7AB97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
 		2B17DD9417163AC600C7AB97 /* ctrip-mobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ctrip-mobile-Prefix.pch"; sourceTree = "<group>"; };
 		2B17DD9517163AC600C7AB97 /* RococoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RococoAppDelegate.h; sourceTree = "<group>"; };
 		2B17DD9617163AC600C7AB97 /* RococoAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RococoAppDelegate.mm; sourceTree = "<group>"; };
@@ -137,17 +136,17 @@
 		2B17DDB41717935F00C7AB97 /* button_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_normal.png; sourceTree = "<group>"; };
 		2B17DDB61717936800C7AB97 /* navbar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_bg.png; sourceTree = "<group>"; };
 		2B17DDB81717936E00C7AB97 /* navbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_bg@2x.png"; sourceTree = "<group>"; };
-		2B17DDBA1717958C00C7AB97 /* MNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNavigationController.h; path = "ctrip-mobile/MNavigationController.h"; sourceTree = "<group>"; };
-		2B17DDBB1717958C00C7AB97 /* MNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNavigationController.m; path = "ctrip-mobile/MNavigationController.m"; sourceTree = "<group>"; };
+		2B17DDBA1717958C00C7AB97 /* MNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNavigationController.h; sourceTree = "<group>"; };
+		2B17DDBB1717958C00C7AB97 /* MNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNavigationController.m; sourceTree = "<group>"; };
 		2B17DDBD17179F1B00C7AB97 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		2B17DDBF1717A26B00C7AB97 /* MItemListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MItemListController.h; path = "ctrip-mobile/MItemListController.h"; sourceTree = "<group>"; };
-		2B17DDC01717A26B00C7AB97 /* MItemListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MItemListController.m; path = "ctrip-mobile/MItemListController.m"; sourceTree = "<group>"; };
+		2B17DDBF1717A26B00C7AB97 /* MItemListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MItemListController.h; sourceTree = "<group>"; };
+		2B17DDC01717A26B00C7AB97 /* MItemListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MItemListController.m; sourceTree = "<group>"; };
 		2B188FDC171D1C53000CC570 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		2B188FDE171D1C63000CC570 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2B188FE0171D1C6E000CC570 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2B188FE4171D1DFC000CC570 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		2B196BBD1749E14200E9BBC6 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon.png"; sourceTree = "<group>"; };
-		2B196BBE1749E14200E9BBC6 /* app-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon@2x.png"; sourceTree = "<group>"; };
+		2B196BBD1749E14200E9BBC6 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon.png"; path = "../app-icon.png"; sourceTree = "<group>"; };
+		2B196BBE1749E14200E9BBC6 /* app-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon@2x.png"; path = "../app-icon@2x.png"; sourceTree = "<group>"; };
 		2B289F96171F819100A3CE7B /* Const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		2B289F97171F819100A3CE7B /* Const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
 		2B289F9A171FAF2600A3CE7B /* MSelectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSelectController.h; sourceTree = "<group>"; };
@@ -160,7 +159,6 @@
 		2B35C1921847686E00934956 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2B35C1941847689E00934956 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		2B35C196184769F100934956 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
-		2B35C19718476A8100934956 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = ../../../Downloads/AMap_iOS_API_Lib_V2.1.2/3D/MAMapKit.framework; sourceTree = "<group>"; };
 		2B774CA01720E5D400FFD9DF /* MWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWindow.h; sourceTree = "<group>"; };
 		2B774CA11720E5D400FFD9DF /* MWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWindow.m; sourceTree = "<group>"; };
 		2B774CAC17210E6A00FFD9DF /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../background.png; sourceTree = "<group>"; };
@@ -184,8 +182,6 @@
 		2B82CBA0171E598400A5A4EC /* cell_top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_top@2x.png"; sourceTree = "<group>"; };
 		2B82CBA1171E598400A5A4EC /* common_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = common_bg.png; sourceTree = "<group>"; };
 		2B82CBA2171E598400A5A4EC /* common_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "common_bg@2x.png"; sourceTree = "<group>"; };
-		2B82CBAC171E602000A5A4EC /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		2B82CBAD171E602000A5A4EC /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		2B82CBAF171E7A9000A5A4EC /* MConfigController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MConfigController.h; sourceTree = "<group>"; };
 		2B82CBB0171E7A9000A5A4EC /* MConfigController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MConfigController.m; sourceTree = "<group>"; };
 		2B82CBB3171E814100A5A4EC /* MBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBaseController.h; sourceTree = "<group>"; };
@@ -202,7 +198,6 @@
 		2B86C5701849C55E0074747E /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
 		2B86C5721849C5900074747E /* LineDashPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineDashPolyline.h; sourceTree = "<group>"; };
 		2B86C5731849C5900074747E /* LineDashPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineDashPolyline.m; sourceTree = "<group>"; };
-		2B86C5751849CA0C0074747E /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapSearchKit.framework; path = ../../../Downloads/AMap_iOS_API_Lib_V2.1.2/Search/AMapSearchKit.framework; sourceTree = "<group>"; };
 		2B86C5781849D1720074747E /* MUserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUserLocation.h; sourceTree = "<group>"; };
 		2B8725491724F62B00FC5FC7 /* MDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDetailCell.xib; sourceTree = "<group>"; };
 		2B87254D1724FD6200FC5FC7 /* ItemDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetail.h; sourceTree = "<group>"; };
@@ -224,6 +219,8 @@
 		2BABA9471844DACC00F763DD /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		2BCB41831733AFDF00B4C12E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		2BCB41841733AFDF00B4C12E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		2BD5BDA3184C14730044389A /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		2BD5BDA5184C148B0044389A /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
 		2BE790401739ED8B001011FB /* airplane@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane@2x.png.png"; sourceTree = "<group>"; };
 		2BE79044173A0DA7001011FB /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		2BE79048173A1049001011FB /* transparent.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent.png.png; sourceTree = "<group>"; };
@@ -278,8 +275,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B86C5761849CA0C0074747E /* AMapSearchKit.framework in Frameworks */,
-				2B35C19818476A8100934956 /* MAMapKit.framework in Frameworks */,
 				2B35C1931847686E00934956 /* Security.framework in Frameworks */,
 				2B35C1911847682D00934956 /* libstdc++.6.0.9.dylib in Frameworks */,
 				2B9ABB2817BB5EAD000835A1 /* OpenGLES.framework in Frameworks */,
@@ -292,7 +287,9 @@
 				2B188FDF171D1C63000CC570 /* SystemConfiguration.framework in Frameworks */,
 				2B188FDD171D1C53000CC570 /* CFNetwork.framework in Frameworks */,
 				2B17DDBE17179F1B00C7AB97 /* CoreLocation.framework in Frameworks */,
+				2BD5BDA4184C14730044389A /* MAMapKit.framework in Frameworks */,
 				2B17DD8717163AC600C7AB97 /* UIKit.framework in Frameworks */,
+				2BD5BDA6184C148B0044389A /* AMapSearchKit.framework in Frameworks */,
 				2B17DD8917163AC600C7AB97 /* Foundation.framework in Frameworks */,
 				2B17DD8B17163AC600C7AB97 /* CoreGraphics.framework in Frameworks */,
 				AC6EA1D48479476FA2D6C995 /* libPods.a in Frameworks */,
@@ -305,6 +302,8 @@
 		2B17DD7A17163AC500C7AB97 = {
 			isa = PBXGroup;
 			children = (
+				2B17DD9517163AC600C7AB97 /* RococoAppDelegate.h */,
+				2B17DD9617163AC600C7AB97 /* RococoAppDelegate.mm */,
 				2B86C5781849D1720074747E /* MUserLocation.h */,
 				2B86C5721849C5900074747E /* LineDashPolyline.h */,
 				2B86C5731849C5900074747E /* LineDashPolyline.m */,
@@ -313,11 +312,7 @@
 				2B35C196184769F100934956 /* APIKey.h */,
 				2B35C1941847689E00934956 /* AMap.bundle */,
 				2BABA9451844DACC00F763DD /* SWRevealViewController */,
-				2B9ABB2717BB5EAD000835A1 /* OpenGLES.framework */,
-				2B9ABB0617BB5CF9000835A1 /* CoreTelephony.framework */,
 				2B9ABB0217B092D4000835A1 /* SDURLCache */,
-				2B196BBD1749E14200E9BBC6 /* app-icon.png */,
-				2B196BBE1749E14200E9BBC6 /* app-icon@2x.png */,
 				2B2E7A66174230320061B330 /* CycleScrollView */,
 				2BCB41831733AFDF00B4C12E /* Reachability.h */,
 				2BCB41841733AFDF00B4C12E /* Reachability.m */,
@@ -331,7 +326,6 @@
 				2B82CBB2171E811200A5A4EC /* Controllers */,
 				2B82CB96171E395600A5A4EC /* Models */,
 				2B82CB95171E2E4700A5A4EC /* Views */,
-				2B188FDB171D1A41000CC570 /* MBProgressHUD */,
 				2B17DD8C17163AC600C7AB97 /* ctrip-mobile */,
 				2B17DD8517163AC500C7AB97 /* Frameworks */,
 				2B17DD8417163AC500C7AB97 /* Products */,
@@ -350,8 +344,10 @@
 		2B17DD8517163AC500C7AB97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2B86C5751849CA0C0074747E /* AMapSearchKit.framework */,
-				2B35C19718476A8100934956 /* MAMapKit.framework */,
+				2B9ABB2717BB5EAD000835A1 /* OpenGLES.framework */,
+				2B9ABB0617BB5CF9000835A1 /* CoreTelephony.framework */,
+				2BD5BDA5184C148B0044389A /* AMapSearchKit.framework */,
+				2BD5BDA3184C14730044389A /* MAMapKit.framework */,
 				2B35C1921847686E00934956 /* Security.framework */,
 				2B35C1901847682D00934956 /* libstdc++.6.0.9.dylib */,
 				802E60891733E0B600E7BBE3 /* CoreData.framework */,
@@ -373,8 +369,6 @@
 		2B17DD8C17163AC600C7AB97 /* ctrip-mobile */ = {
 			isa = PBXGroup;
 			children = (
-				2B17DD9517163AC600C7AB97 /* RococoAppDelegate.h */,
-				2B17DD9617163AC600C7AB97 /* RococoAppDelegate.mm */,
 				2B17DD8D17163AC600C7AB97 /* Supporting Files */,
 			);
 			path = "ctrip-mobile";
@@ -392,15 +386,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2B188FDB171D1A41000CC570 /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				2B82CBAC171E602000A5A4EC /* MBProgressHUD.h */,
-				2B82CBAD171E602000A5A4EC /* MBProgressHUD.m */,
-			);
-			name = MBProgressHUD;
-			sourceTree = "<group>";
-		};
 		2B2E7A66174230320061B330 /* CycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +398,8 @@
 		2B774CB217210EA000FFD9DF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2B196BBD1749E14200E9BBC6 /* app-icon.png */,
+				2B196BBE1749E14200E9BBC6 /* app-icon@2x.png */,
 				2BABA9411844D57C00F763DD /* reveal-icon.png */,
 				2BABA9421844D57C00F763DD /* reveal-icon@2x.png */,
 				80F21F6A173BDCC100D9A580 /* hotel1.png */,
@@ -720,7 +707,6 @@
 				2B17DDC11717A26B00C7AB97 /* MItemListController.m in Sources */,
 				2B82CB92171E2AEC00A5A4EC /* MItemCell.m in Sources */,
 				2B82CB99171E399A00A5A4EC /* Item.m in Sources */,
-				2B82CBAE171E602000A5A4EC /* MBProgressHUD.m in Sources */,
 				2B82CBB1171E7A9100A5A4EC /* MConfigController.m in Sources */,
 				2B82CBB5171E814100A5A4EC /* MBaseController.m in Sources */,
 				2B82CBB8171E84F300A5A4EC /* MCell.m in Sources */,
@@ -776,6 +762,7 @@
 /* Begin XCBuildConfiguration section */
 		2B17DDA417163AC600C7AB97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7D50C260BC4DDFAA0D08DB /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -799,7 +786,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				HEADER_SEARCH_PATHS = "$(inherited)/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -809,6 +797,7 @@
 		};
 		2B17DDA517163AC600C7AB97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7D50C260BC4DDFAA0D08DB /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -825,7 +814,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				HEADER_SEARCH_PATHS = "$(inherited)/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
@@ -847,6 +837,7 @@
 					"$(inherited)",
 					/Volumes/MAC_HDD/Users/caoguangyao/Downloads/AMap_iOS_API_Lib_V2.1.2/3D,
 					/Volumes/MAC_HDD/Users/caoguangyao/Downloads/AMap_iOS_API_Lib_V2.1.2/Search,
+					"/Users/caoguangyao/ctrip-mobile/ctrip-mobile",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ctrip-mobile/ctrip-mobile-Prefix.pch";
@@ -861,6 +852,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -877,6 +869,7 @@
 					"$(inherited)",
 					/Volumes/MAC_HDD/Users/caoguangyao/Downloads/AMap_iOS_API_Lib_V2.1.2/3D,
 					/Volumes/MAC_HDD/Users/caoguangyao/Downloads/AMap_iOS_API_Lib_V2.1.2/Search,
+					"/Users/caoguangyao/ctrip-mobile/ctrip-mobile",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ctrip-mobile/ctrip-mobile-Prefix.pch";
@@ -891,6 +884,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
