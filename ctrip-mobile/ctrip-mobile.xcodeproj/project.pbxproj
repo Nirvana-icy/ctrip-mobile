@@ -38,7 +38,7 @@
 		2B35C1911847682D00934956 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B35C1901847682D00934956 /* libstdc++.6.0.9.dylib */; };
 		2B35C1931847686E00934956 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B35C1921847686E00934956 /* Security.framework */; };
 		2B35C1951847689E00934956 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B35C1941847689E00934956 /* AMap.bundle */; };
-		2B3BE282184CC5890010FF40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B3BE281184CC5890010FF40 /* Images.xcassets */; };
+		2B6E8648184DF4CC009B0F44 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B6E8647184DF4CC009B0F44 /* appicon.png */; };
 		2B774CA21720E5D400FFD9DF /* MWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B774CA11720E5D400FFD9DF /* MWindow.m */; };
 		2B774CAF17210E6A00FFD9DF /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B774CAC17210E6A00FFD9DF /* background.png */; };
 		2B774CB017210E6A00FFD9DF /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B774CAD17210E6A00FFD9DF /* page.png */; };
@@ -159,10 +159,7 @@
 		2B35C1921847686E00934956 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2B35C1941847689E00934956 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		2B35C196184769F100934956 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
-		2B3BE281184CC5890010FF40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2B6A5696184D73BE0080DCC3 /* icon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_120.png; sourceTree = "<group>"; };
-		2B6A5697184D73CA0080DCC3 /* icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_80.png; sourceTree = "<group>"; };
-		2B6A5698184D73E60080DCC3 /* icon_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_58.png; sourceTree = "<group>"; };
+		2B6E8647184DF4CC009B0F44 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		2B774CA01720E5D400FFD9DF /* MWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWindow.h; sourceTree = "<group>"; };
 		2B774CA11720E5D400FFD9DF /* MWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWindow.m; sourceTree = "<group>"; };
 		2B774CAC17210E6A00FFD9DF /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../background.png; sourceTree = "<group>"; };
@@ -305,9 +302,7 @@
 		2B17DD7A17163AC500C7AB97 = {
 			isa = PBXGroup;
 			children = (
-				2B6A5698184D73E60080DCC3 /* icon_58.png */,
-				2B6A5697184D73CA0080DCC3 /* icon_80.png */,
-				2B6A5696184D73BE0080DCC3 /* icon_120.png */,
+				2B6E8647184DF4CC009B0F44 /* appicon.png */,
 				2B17DD9517163AC600C7AB97 /* RococoAppDelegate.h */,
 				2B17DD9617163AC600C7AB97 /* RococoAppDelegate.mm */,
 				2B3BE280184CBB110010FF40 /* Protocols */,
@@ -362,7 +357,6 @@
 		2B17DD8C17163AC600C7AB97 /* ctrip-mobile */ = {
 			isa = PBXGroup;
 			children = (
-				2B3BE281184CC5890010FF40 /* Images.xcassets */,
 				2B17DD8D17163AC600C7AB97 /* Supporting Files */,
 			);
 			path = "ctrip-mobile";
@@ -642,6 +636,7 @@
 				2B82CBA6171E598400A5A4EC /* cell_middle@2x.png in Resources */,
 				2BABA9431844D57C00F763DD /* reveal-icon.png in Resources */,
 				2B82CBA7171E598400A5A4EC /* cell_top_tile.png in Resources */,
+				2B6E8648184DF4CC009B0F44 /* appicon.png in Resources */,
 				2B82CBA8171E598400A5A4EC /* cell_top.png in Resources */,
 				2B82CBA9171E598400A5A4EC /* cell_top@2x.png in Resources */,
 				2B82CBAA171E598400A5A4EC /* common_bg.png in Resources */,
@@ -651,7 +646,6 @@
 				2B774CAF17210E6A00FFD9DF /* background.png in Resources */,
 				2B774CB017210E6A00FFD9DF /* page.png in Resources */,
 				2B87254A1724F62B00FC5FC7 /* MDetailCell.xib in Resources */,
-				2B3BE282184CC5890010FF40 /* Images.xcassets in Resources */,
 				80D379A7172EDE55008075AF /* NotifyCheck.png in Resources */,
 				2BABA9441844D57C00F763DD /* reveal-icon@2x.png in Resources */,
 				80D379A8172EDE55008075AF /* NotifyCheck@2x.png in Resources */,
@@ -843,7 +837,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7D50C260BC4DDFAA0D08DB /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -876,7 +871,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7D50C260BC4DDFAA0D08DB /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
