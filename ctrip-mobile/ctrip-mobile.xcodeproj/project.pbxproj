@@ -160,9 +160,9 @@
 		2B35C1941847689E00934956 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		2B35C196184769F100934956 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
 		2B3BE281184CC5890010FF40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2B3BE283184CC6A40010FF40 /* app-icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-58.png"; sourceTree = "<group>"; };
-		2B3BE284184CC6D30010FF40 /* app-icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-80.png"; sourceTree = "<group>"; };
-		2B3BE285184CC7000010FF40 /* app-icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-120.png"; sourceTree = "<group>"; };
+		2B6A5696184D73BE0080DCC3 /* icon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_120.png; sourceTree = "<group>"; };
+		2B6A5697184D73CA0080DCC3 /* icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_80.png; sourceTree = "<group>"; };
+		2B6A5698184D73E60080DCC3 /* icon_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_58.png; sourceTree = "<group>"; };
 		2B774CA01720E5D400FFD9DF /* MWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWindow.h; sourceTree = "<group>"; };
 		2B774CA11720E5D400FFD9DF /* MWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWindow.m; sourceTree = "<group>"; };
 		2B774CAC17210E6A00FFD9DF /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../background.png; sourceTree = "<group>"; };
@@ -305,9 +305,9 @@
 		2B17DD7A17163AC500C7AB97 = {
 			isa = PBXGroup;
 			children = (
-				2B3BE285184CC7000010FF40 /* app-icon-120.png */,
-				2B3BE284184CC6D30010FF40 /* app-icon-80.png */,
-				2B3BE283184CC6A40010FF40 /* app-icon-58.png */,
+				2B6A5698184D73E60080DCC3 /* icon_58.png */,
+				2B6A5697184D73CA0080DCC3 /* icon_80.png */,
+				2B6A5696184D73BE0080DCC3 /* icon_120.png */,
 				2B17DD9517163AC600C7AB97 /* RococoAppDelegate.h */,
 				2B17DD9617163AC600C7AB97 /* RococoAppDelegate.mm */,
 				2B3BE280184CBB110010FF40 /* Protocols */,

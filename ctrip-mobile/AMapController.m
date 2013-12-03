@@ -15,6 +15,7 @@
 #import "LineDashPolyline.h"
 #import "MapOptions.h"
 #import "Utility.h"
+#import "Pods/MRProgress/src/Blur/MRBlurView.h"
 @interface AMapController ()<WYPopoverControllerDelegate,MUserLocation,MapOptions>
 
 @property (nonatomic, strong) MAMapView *mapView;
@@ -72,9 +73,13 @@
 # pragma mark -- set popover appearance
 - (void)initPopoverAppearance
 {
-    UIColor* greyColor = [UIColor colorWithRed:75.f/255.f green:75.f/255.f blue:75.f/255.f alpha:0.5];
+    UIColor* greyColor = [UIColor colorWithRed:75.f/255.f green:75.f/255.f blue:75.f/255.f alpha:0.9];
     
     WYPopoverBackgroundView* popoverAppearance = [WYPopoverBackgroundView appearance];
+    /*
+    MRBlurView *blurView = [MRBlurView new];
+    blurView.alpha = 0.618;
+    UIImage *image = [blurView image];*/
     
     [popoverAppearance setOuterCornerRadius:4];
     [popoverAppearance setOuterShadowBlurRadius:0];
@@ -92,18 +97,26 @@
     [popoverAppearance setInnerShadowBlurRadius:0];
     [popoverAppearance setInnerShadowColor:[UIColor clearColor]];
     [popoverAppearance setInnerShadowOffset:CGSizeMake(0, 0)];
+
     
     [popoverAppearance setFillTopColor:greyColor];
     [popoverAppearance setFillBottomColor:greyColor];
     [popoverAppearance setOuterStrokeColor:greyColor];
     [popoverAppearance setInnerStrokeColor:greyColor];
+    
+    //[popoverAppearance setBackgroundColor:[UIColor colorWithPatternImage:image]];
     /*
     UINavigationBar* navBarInPopoverAppearance = [UINavigationBar appearanceWhenContainedIn:[UINavigationController class], [WYPopoverController class], nil];
+    ///Users/caoguangyao/ctrip-mobile/ctrip-mobile/AMapController.m:112:58: 'UITextAttributeTextColor' is deprecated: first deprecated in iOS 7.0 - Use NSForegroundColorAttributeName
+    ///Users/caoguangyao/ctrip-mobile/ctrip-mobile/AMapController.m:113:58: 'UITextAttributeTextShadowColor' is deprecated: first deprecated in iOS 7.0 - Use NSShadowAttributeName with an NSShadow instance as the value
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor clearColor];
+    shadow.shadowOffset = CGSizeMake(0, -1);//[NSValue valueWithUIOffset:UIOffsetMake(0, -1)];
     [navBarInPopoverAppearance setTitleTextAttributes: @{
-                                                         UITextAttributeTextColor : [UIColor whiteColor],
-                                                         UITextAttributeTextShadowColor : [UIColor clearColor],
-                                                         UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetMake(0, -1)]}];
-     */
+                                                         NSForegroundColorAttributeName : [UIColor whiteColor],
+                                                         NSShadowAttributeName:shadow
+                                                         }];*/
+    
 }
 
 # pragma mark -- user location delegate method

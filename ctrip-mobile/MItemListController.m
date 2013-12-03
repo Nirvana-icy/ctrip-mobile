@@ -210,11 +210,72 @@
 
 #pragma mark - Table view delegate
 
+-(void)tableViewLoadDetail:(NSIndexPath *)indexPath
+{
+    Item *item = [self.items objectAtIndex:[indexPath row]];
+    NSInteger productID = item.productID;
+    
+    NSLog(@"@145, product_id=%d",productID);
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@/?product_id=%d",API_BASE_URL,GROUP_PRODUCT_PARAMTER,productID];
+    
+    [self.network httpJsonResponse:url byController:self];
+
+}
+
+-(void)tableViewLoadMoreItem:(NSIndexPath *)indexPath
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *city = [defaults valueForKey:@"city"];
+    NSString *lowPrice = [defaults valueForKey:@"low_price"];
+    NSString *upperPrice = [defaults valueForKey:@"upper_price"];
+    NSString *topCount = [defaults valueForKey:@"top_count"];
+    NSString *sortType = [defaults valueForKey:@"sort_type"];
+    
+    if (city.length == 0) {
+        city =@"";
+    }
+    
+    if (lowPrice.length == 0 ) {
+        lowPrice =@"0";
+    }
+    
+    if (upperPrice.length ==0) {
+        upperPrice = @"800";
+    }
+    
+    if (topCount.length ==0) {
+        topCount =@"0";
+    }
+    
+    if (sortType == nil) {
+        sortType =@"";
+    }
+    
+    self.pageIndex =self.pageIndex+1;
+    
+    NSString *strURL=[NSString stringWithFormat:@"%@%@/?page_index=%d%@&city=%@&low_price=%@&upper_price=%@&top_count=%@&sort_type=%@&key_words=%@",
+                      API_BASE_URL,GROUP_LIST_PARAMTER,self.pageIndex ,PAGE_SIZE_PARAMTER,
+                      [city URLEncode],[lowPrice URLEncode],[upperPrice URLEncode],[topCount URLEncode],[sortType URLEncode],[self.keyWords URLEncode]];
+    [self.network httpJsonResponse:strURL byController:self];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSUInteger row = [indexPath row];
-    NSUInteger rowCount = [tableView numberOfRowsInSection:[indexPath section]];
+    //NSUInteger row = [indexPath row];
+    //NSUInteger rowCount = [tableView numberOfRowsInSection:[indexPath section]];
     
+    MItemCell *cell = (MItemCell *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    
+    if (cell.thumbnailView == nil) {
+        [self tableViewLoadMoreItem:indexPath];
+    }
+    else{
+        [self tableViewLoadDetail:indexPath];
+    }
+    /*
     if (row<rowCount-1) {
         Item *item = [self.items objectAtIndex:[indexPath row]];
         NSInteger productID = item.productID;
@@ -226,43 +287,8 @@
         [self.network httpJsonResponse:url byController:self];
     }
     else{
-        
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        
-        NSString *city = [defaults valueForKey:@"city"];
-        NSString *lowPrice = [defaults valueForKey:@"low_price"];
-        NSString *upperPrice = [defaults valueForKey:@"upper_price"];
-        NSString *topCount = [defaults valueForKey:@"top_count"];
-        NSString *sortType = [defaults valueForKey:@"sort_type"];
-        
-        if (city.length == 0) {
-            city =@"";
-        }
-        
-        if (lowPrice.length == 0 ) {
-            lowPrice =@"0";
-        }
-        
-        if (upperPrice.length ==0) {
-            upperPrice = @"800";
-        }
-        
-        if (topCount.length ==0) {
-            topCount =@"0";
-        }
-        
-        if (sortType == nil) {
-            sortType =@"";
-        }
-        
-        self.pageIndex =self.pageIndex+1;
-        
-        NSString *strURL=[NSString stringWithFormat:@"%@%@/?page_index=%d%@&city=%@&low_price=%@&upper_price=%@&top_count=%@&sort_type=%@&key_words=%@",
-                          API_BASE_URL,GROUP_LIST_PARAMTER,self.pageIndex ,PAGE_SIZE_PARAMTER,
-                          [city URLEncode],[lowPrice URLEncode],[upperPrice URLEncode],[topCount URLEncode],[sortType URLEncode],[self.keyWords URLEncode]];
-        [self.network httpJsonResponse:strURL byController:self];
-        
-    }
+     
+    }*/
     
     
 }
